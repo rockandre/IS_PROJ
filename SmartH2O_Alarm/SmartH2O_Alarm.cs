@@ -41,17 +41,16 @@ namespace SmartH2O_Alarm
             XmlElement sensors = doc.CreateElement("sensors");
             XmlElement ph = doc.CreateElement("ph");
             XmlElement conditions = doc.CreateElement("conditions");
-            conditions.SetAttribute("ative", "true");
+            conditions.SetAttribute("ative", "");
             XmlElement condition = doc.CreateElement("condition");
-            condition.SetAttribute("ative", "true");
-            condition.SetAttribute("operator", "between");
-            condition.SetAttribute("lower_value", "1");
-            condition.SetAttribute("higher_value", "14");
+            condition.SetAttribute("ative", "");
+            condition.SetAttribute("operator", "");
+            condition.SetAttribute("value", "");
             conditions.AppendChild(condition);
             ph.AppendChild(conditions);
             sensors.AppendChild(ph);
             doc.AppendChild(sensors);
-            doc.Save("C:/Users/rockandre/Documents/Visual Studio 2015/Projects/SmartH2O_DU/SmartH2O_Alarm/trigger-rules.xml");
+            doc.Save("C:/Users/rockandre/Documents/Visual Studio 2015/Projects/SmartH2O/SmartH2O_Alarm/trigger-rules.xml");
         }
 
         private void SmartH2OAlarm_Load(object sender, EventArgs e)

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <sensors>
   <ph>
-    <conditions ative="true">
-      <condition ative="true" operator="between" lower_value="1" higher_value="14" />
+    <conditions ative="">
+      <condition ative="" operator="between	" value="" />
     </conditions>
   </ph>
 </sensors>
