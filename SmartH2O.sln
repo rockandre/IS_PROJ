@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartH2O-DLog", "SmartH2O-D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartH2O_Alarm", "SmartH2O_Alarm\SmartH2O_Alarm.csproj", "{49146793-2A20-4FB3-AEAF-B575563D047B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartH2O_Service", "SmartH2O_Service\SmartH2O_Service.csproj", "{72CCEC47-D973-42C5-9B87-E19F3F185B64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartH2O_SeeAPP", "SmartH2O_SeeAPP\SmartH2O_SeeAPP.csproj", "{B8B3609D-AD47-459D-96D1-031A437AF4BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{49146793-2A20-4FB3-AEAF-B575563D047B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49146793-2A20-4FB3-AEAF-B575563D047B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49146793-2A20-4FB3-AEAF-B575563D047B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72CCEC47-D973-42C5-9B87-E19F3F185B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72CCEC47-D973-42C5-9B87-E19F3F185B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72CCEC47-D973-42C5-9B87-E19F3F185B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72CCEC47-D973-42C5-9B87-E19F3F185B64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8B3609D-AD47-459D-96D1-031A437AF4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B3609D-AD47-459D-96D1-031A437AF4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B3609D-AD47-459D-96D1-031A437AF4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B3609D-AD47-459D-96D1-031A437AF4BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
