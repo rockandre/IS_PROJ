@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="sensors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ph">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="conditions">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="condition">
+                      <xs:complexType>
+                        <xs:attribute name="ative" type="xs:boolean" use="required" />
+                        <xs:attribute name="operator" type="xs:string" use="required" />
+                        <xs:attribute name="lower_value" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="higher_value" type="xs:unsignedByte" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="ative" type="xs:boolean" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
