@@ -17,7 +17,7 @@ namespace SmartH2O_DU
         static void Main(string[] args)
         {
             SensorNodeDll.SensorNodeDll sensorNodeDll = new SensorNodeDll.SensorNodeDll();
-            sensorNodeDll.Initialize(newValueIncoming, 500);
+            sensorNodeDll.Initialize(newValueIncoming, 7000);
 
             //sensorNodeDll.Stop();
         }
@@ -37,7 +37,7 @@ namespace SmartH2O_DU
             //OuterXml devolve a string e enviala
             DateTime dateNow = DateTime.Now;
 
-            XmlDeclaration dec = doc.CreateXmlDeclaration("1.0", null, null);
+            XmlDeclaration dec = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
             doc.AppendChild(dec);
 
             XmlElement root = doc.CreateElement("quality-parameter");

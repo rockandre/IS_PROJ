@@ -3,7 +3,7 @@
   <xs:element name="sensors">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="ph">
+        <xs:element maxOccurs="unbounded" name="sensor">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="conditions">
@@ -11,17 +11,17 @@
                   <xs:sequence>
                     <xs:element name="condition">
                       <xs:complexType>
-                        <xs:attribute name="ative" type="xs:boolean" use="required" />
+                        <xs:attribute name="ative" type="xs:string" use="required" />
                         <xs:attribute name="operator" type="xs:string" use="required" />
-                        <xs:attribute name="lower_value" type="xs:unsignedByte" use="required" />
-                        <xs:attribute name="higher_value" type="xs:unsignedByte" use="required" />
+                        <xs:attribute name="value" type="xs:string" use="required" />
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
-                  <xs:attribute name="ative" type="xs:boolean" use="required" />
+                  <xs:attribute name="ative" type="xs:string" use="required" />
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
+            <xs:attribute name="type" type="xs:string" use="required" />
           </xs:complexType>
         </xs:element>
       </xs:sequence>

@@ -35,7 +35,6 @@ namespace CommunicationInfrastructure
 	                    <rule> </rule>
                     </quality-parameter>
                 */
-
             }
             
 
