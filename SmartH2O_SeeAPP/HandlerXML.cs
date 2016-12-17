@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Schema;
 
-namespace SmartH2O_Service
+namespace SmartH2O_SeeAPP
 {
     class HandlerXML
     {
+
         public string XmlFilePath { get; set; }
         public string XsdFilePath { get; set; }
 
@@ -36,6 +37,11 @@ namespace SmartH2O_Service
 
 
             return doc.OuterXml;
+        }
+
+        internal string addIsbnCategory(string bookTitle, string text)
+        {
+            throw new NotImplementedException();
         }
 
         public bool ValidateXml()
@@ -67,23 +73,23 @@ namespace SmartH2O_Service
             validationMessage = "Invalid document: " + e.Message;
         }
 
+        //----------------
 
-
-        public void GetInformationByHour(string date, string hour)
+        public List<string> GetDays()
         {
             List<string> lista = new List<string>();
             XmlDocument doc = new XmlDocument();
             doc.Load(XmlFilePath);
 
-            XmlNodeList nos = doc.SelectNodes("/quality-parameters/PH/value");
+            XmlNodeList nos = doc.SelectNodes("/quality-parameters/*/date");
             foreach (XmlNode item in nos)
             {
-                Console.Write(item.InnerText);
+                lista.Add(item.InnerText);
             }
 
-          
+            return lista;
+
         }
-        
 
     }
 }
