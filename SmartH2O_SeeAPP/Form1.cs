@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace SmartH2O_SeeAPP
 {
@@ -24,31 +23,17 @@ namespace SmartH2O_SeeAPP
             listBoxDay1.DataSource = myClass.GetDays();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnStatsByDay_Click(object sender, EventArgs e)
         {
-
+            groupBoxGraphs.Text = "Weekly Statistics By Day";
+            chartPH.Series.Add("PH");
+            chartPH.ChartAreas.Add("ChartAreaPH");
+            chartPH.ChartAreas["ChartAreaPH"].AxisX.Name = "Hours";
         }
 
-        private void buttonGetInfoByParameter_Click(object sender, EventArgs e)
+        private void btnStatsByHour_Click(object sender, EventArgs e)
         {
-
-            if (checkBoxpH.Checked)
-            {
-                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("PH");
-            }
-
-            if (checkBoxNh3.Checked)
-            {
-                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("NH3");
-            }
-
-            if (checkBoxCl2.Checked)
-            {
-                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("CI2");
-            }
-
+            groupBoxGraphs.Text = "Daily Statistics By Hour";
         }
-
-   
     }
 }
