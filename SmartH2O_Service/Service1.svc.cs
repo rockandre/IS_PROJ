@@ -21,10 +21,11 @@ namespace SmartH2O_Service
             string finalString = "";
           
             XmlDocument doc = new XmlDocument();
-            doc.Load(FILEPATH);
+            doc.Load(@"App_Data\param-data.xml");
 
-            XmlNodeList parameters = doc.SelectNodes("/quality-parameters/"+parameter);
-            finalString = finalString + parameter + "\n";
+            XmlNodeList parameters = doc.SelectNodes("quality-parameters/"+parameter);
+            finalString = finalString + parameter;
+            finalString = finalString + "\n";
             foreach (XmlNode itemValues in parameters)
             {
                 XmlNodeList values = doc.SelectNodes("/quality-parameters/" + parameter+"/value");
@@ -41,10 +42,30 @@ namespace SmartH2O_Service
                     finalString = finalString + "\t" + item1.InnerText;
                 }
             }
-          
+            finalString = finalString + "\n\n";
+
+
             return finalString;
         }
 
+        public HashSet<string> GetDates()
+        {
+            HashSet<string> lista = new HashSet<string>();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(FILEPATH);
+
+            XmlNodeList nos = doc.SelectNodes("/quality-parameters/*/date");
+            foreach (XmlNode item in nos)
+            {
+                int space = item.InnerText.IndexOf(" ");
+                if (lista.Add(item.InnerText.Substring(0, space)) != false)
+                {
+                    lista.Add(item.InnerText.Substring(0, space));
+                }
+            }
+
+            return lista;
+        }
 
 
     }
