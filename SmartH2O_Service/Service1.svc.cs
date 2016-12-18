@@ -13,22 +13,36 @@ namespace SmartH2O_Service
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        string FILEPATH = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"App_Data\bookstore.xml";
+        string FILEPATH = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"App_Data\param-data.xml";
 
-        public List<QualityParameters> GetDataByDay(string parameter)
+
+        public string getInfoByParameter(string parameter)
         {
-            List<QualityParameters> lista = new List<QualityParameters>();
-
+            string finalString = "";
+          
             XmlDocument doc = new XmlDocument();
             doc.Load(FILEPATH);
 
-            XmlNodeList parameters = doc.SelectNodes("/quality-parameters/"+parameter+"/value");
-            foreach (XmlNode item in parameters)
+            XmlNodeList parameters = doc.SelectNodes("/quality-parameters/"+parameter);
+            finalString = finalString + parameter + "\n";
+            foreach (XmlNode itemValues in parameters)
             {
-                
-            }
+                XmlNodeList values = doc.SelectNodes("/quality-parameters/" + parameter+"/value");
+                finalString = finalString + "\tValue: ";
+                foreach (XmlNode item in values)
+                {
+                    finalString = finalString + item.InnerText;
+                }
 
-            return lista;
+                XmlNodeList dates = doc.SelectNodes("/quality-parameters/" + parameter + "/date");
+                finalString = finalString + "\tDate: ";
+                foreach (XmlNode item1 in dates)
+                {
+                    finalString = finalString + "\t" + item1.InnerText;
+                }
+            }
+          
+            return finalString;
         }
 
 

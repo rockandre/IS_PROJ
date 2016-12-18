@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<quality-parameters>
+  <PH>
+    <value>6.7</value>
+    <date>15/12/2016 11:42:38</date>
+  </PH>
+  <NH3>
+    <value>1.33</value>
+    <date>15/12/2016 11:42:41</date>
+  </NH3>
+  <PH>
+    <value>5.0</value>
+    <date>15/12/2016 11:42:59</date>
+  </PH>
+  <NH3>
+    <value>1.53</value>
+    <date>15/12/2016 11:42:59</date>
+  </NH3>
+  <CI2>
+    <value>9.3</value>
+    <date>15/12/2016 11:43:00</date>
+  </CI2>
+  <PH>
+    <value>6.5</value>
+    <date>15/12/2016 11:43:00</date>
+  </PH>
+  <NH3>
+    <value>1.37</value>
+    <date>15/12/2016 11:43:01</date>
+  </NH3>
+  <CI2>
+    <value>7.4</value>
+    <date>15/12/2016 11:43:01</date>
+  </CI2>
+  <PH>
+    <value>6.8</value>
+    <date>15/12/2016 11:43:02</date>
+  </PH>
+  <NH3>
+    <value>1.81</value>
+    <date>15/12/2016 11:43:02</date>
+  </NH3>
+  <CI2>
+    <value>7.8</value>
+    <date>15/12/2016 11:43:03</date>
+  </CI2>
+  <PH>
+    <value>6.8</value>
+    <date>15/12/2016 11:43:03</date>
+  </PH>
+  <NH3>
+    <value>1.70</value>
+    <date>15/12/2016 11:43:04</date>
+  </NH3>
+  <CI2>
+    <value>9.4</value>
+    <date>15/12/2016 11:43:04</date>
+  </CI2>
+  <PH>
+    <value>5.6</value>
+    <date>15/12/2016 11:43:05</date>
+  </PH>
+  <NH3>
+    <value>1.77</value>
+    <date>15/12/2016 11:43:05</date>
+  </NH3>
+  <CI2>
+    <value>11.6</value>
+    <date>15/12/2016 11:43:06</date>
+  </CI2>
+  <PH>
+    <value>5.6</value>
+    <date>15/12/2016 11:43:07</date>
+  </PH>
+  <NH3>
+    <value>1.94</value>
+    <date>15/12/2016 11:43:07</date>
+  </NH3>
+  <CI2>
+    <value>8.8</value>
+    <date>15/12/2016 11:43:08</date>
+  </CI2>
+</quality-parameters>

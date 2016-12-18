@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace SmartH2O_SeeAPP
 {
@@ -22,5 +23,32 @@ namespace SmartH2O_SeeAPP
             HandlerXML myClass = new HandlerXML("param-data.xml");
             listBoxDay1.DataSource = myClass.GetDays();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonGetInfoByParameter_Click(object sender, EventArgs e)
+        {
+
+            if (checkBoxpH.Checked)
+            {
+                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("PH");
+            }
+
+            if (checkBoxNh3.Checked)
+            {
+                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("NH3");
+            }
+
+            if (checkBoxCl2.Checked)
+            {
+                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("CI2");
+            }
+
+        }
+
+   
     }
 }

@@ -13,9 +13,7 @@ namespace SmartH2O_Service
     public interface IService1
     {
         [OperationContract]
-        List<QualityParameters> GetDataByDay(string parameter);
-
-       
+        string getInfoByParameter(Boolean phAux, Boolean nh3Aux, Boolean cl2Aux);
 
         // TODO: Add your service operations here
     }
