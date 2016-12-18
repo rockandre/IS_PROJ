@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -12,7 +13,7 @@ namespace SmartH2O_DLog
 {
     class Program
     {
-        
+
 
         private static MqttClient m_cClient;
 
@@ -21,13 +22,27 @@ namespace SmartH2O_DLog
             /*
             Console.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " + e.Topic);
             */
-            string filePathParams = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"App_Data\param-data.xml";
-            string filePathAlarms = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"App_Data\alarm-data.xml";
+            string filePathParams = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"param-data.xml";
+            string filePathAlarms = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"alarms-data.xml";
             if (e.Topic == "PH" || e.Topic == "NH3" || e.Topic == "CI2")
             {
                 //ESCREVER NO FICHEIRO PARAM-DATA
                 XmlDocument doc = new XmlDocument();
-                doc.Load(filePathParams);
+
+                if (File.Exists(filePathParams))
+                {
+                    doc.Load(filePathParams);
+                } else
+                {
+                    XmlDeclaration dec = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+                    doc.AppendChild(dec);
+
+                    XmlElement root1 = doc.CreateElement("quality-parameters");
+                    doc.AppendChild(root1);
+
+                    doc.Save(filePathParams);
+                }
+
                 XmlNode root = doc.GetElementsByTagName("quality-parameters")[0];
 
                 String newSensor = Encoding.UTF8.GetString(e.Message);
@@ -44,12 +59,27 @@ namespace SmartH2O_DLog
                 
                 root.AppendChild(root.OwnerDocument.ImportNode(nameP, true));
                 doc.Save(filePathParams);
-                Console.WriteLine("Adicionei parametro ao ficheiro param_data.xml!");
-            } else if (e.Topic == "alarm")
+                Console.WriteLine("Adicionei parametro ao ficheiro param-data.xml!");
+            }
+            else if (e.Topic == "alarm")
             {
                 //ESCREVER NO FICHEIRO DOS ALARMS-DATA
                 XmlDocument doc = new XmlDocument();
-                doc.Load(filePathAlarms);
+
+                if(File.Exists(filePathAlarms))
+                {
+                    doc.Load(filePathAlarms);
+                } else
+                {
+                    XmlDeclaration dec = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
+                    doc.AppendChild(dec);
+
+                    XmlElement root1 = doc.CreateElement("alarms");
+                    doc.AppendChild(root1);
+
+                    doc.Save(filePathAlarms);
+                }
+
                 XmlNode root = doc.GetElementsByTagName("alarms")[0];
 
                 String newAlarm = Encoding.UTF8.GetString(e.Message);
@@ -70,7 +100,7 @@ namespace SmartH2O_DLog
                 doc.Save(filePathAlarms);
                 Console.WriteLine("Adicionei alarme ao ficheiro alarms-data.xml!");
             }
-            
+
 
         }
 
