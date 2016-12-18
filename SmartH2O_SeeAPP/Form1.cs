@@ -22,5 +22,18 @@ namespace SmartH2O_SeeAPP
             HandlerXML myClass = new HandlerXML("param-data.xml");
             listBoxDay1.DataSource = myClass.GetDays();
         }
+
+        private void btnStatsByDay_Click(object sender, EventArgs e)
+        {
+            groupBoxGraphs.Text = "Weekly Statistics By Day";
+            chartPH.Series.Add("PH");
+            chartPH.ChartAreas.Add("ChartAreaPH");
+            chartPH.ChartAreas["ChartAreaPH"].AxisX.Name = "Hours";
+        }
+
+        private void btnStatsByHour_Click(object sender, EventArgs e)
+        {
+            groupBoxGraphs.Text = "Daily Statistics By Hour";
+        }
     }
 }

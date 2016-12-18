@@ -17,7 +17,7 @@ namespace SmartH2O_Alarm
 {
     public partial class SmartH2O_Alarm : Form
     {
-        public static string TRIGGER_RULES = "C:/Users/rockandre/Documents/Visual Studio 2015/Projects/SmartH2O/SmartH2O_Alarm/trigger-rules.xml";
+        public static string TRIGGER_RULES = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\trigger-rules.xml";
         private static MqttClient m_cClient = new MqttClient(IPAddress.Parse("127.0.0.1"));
         string[] m_strTopicsInfo = {"PH", "NH3", "CI2", "alarm" };
         string[] sensorsInfo;
@@ -26,6 +26,12 @@ namespace SmartH2O_Alarm
         public SmartH2O_Alarm()
         {
             InitializeComponent();
+            m_cClient.Connect(Guid.NewGuid().ToString());
+            if (!m_cClient.IsConnected)
+            {
+                MessageBox.Show("Error connecting to message broker...");
+                return;
+            }
         }
 
         private void ReadFromXml()
@@ -91,7 +97,7 @@ namespace SmartH2O_Alarm
 
         void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
         {
-            /*MessageBox.Show("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " +
+           /* MessageBox.Show("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " +
             e.Topic);*/
             if (e.Topic != "alarm")
             {
@@ -112,7 +118,7 @@ namespace SmartH2O_Alarm
                 case "PH":
                     XmlNodeList rulesPH = trigger_rules.SelectNodes("/sensors/sensor[@type='PH']/conditions/condition");
 
-                    if (trigger_rules.SelectSingleNode("/sensors/sensor[@type='CI2']/conditions").Attributes["ative"].InnerText == "true")
+                    if (trigger_rules.SelectSingleNode("/sensors/sensor[@type='PH']/conditions").Attributes["ative"].InnerText == "true")
                     {
                         foreach (XmlNode rule in rulesPH)
                         {
@@ -349,12 +355,6 @@ namespace SmartH2O_Alarm
         private void btnStart_Click(object sender, EventArgs e)
         {
             ReadFromXml();
-            m_cClient.Connect(Guid.NewGuid().ToString());
-            if (!m_cClient.IsConnected)
-            {
-                MessageBox.Show("Error connecting to message broker...");
-                return;
-            }
             //Specify events we are interest on
             //New Msg Arrived
             m_cClient.MqttMsgPublishReceived += client_MqttMsgPublishReceived;

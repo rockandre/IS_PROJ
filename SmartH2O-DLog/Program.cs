@@ -22,7 +22,7 @@ namespace SmartH2O_DLog
             Console.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " + e.Topic);
             */
             string filePathParams = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"App_Data\param-data.xml";
-            string filePathAlarms = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"App_Data\alarms-data.xml";
+            string filePathAlarms = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"App_Data\alarm-data.xml";
             if (e.Topic == "PH" || e.Topic == "NH3" || e.Topic == "CI2")
             {
                 //ESCREVER NO FICHEIRO PARAM-DATA
@@ -41,9 +41,7 @@ namespace SmartH2O_DLog
                 XmlElement nameP = doc.CreateElement(name.InnerText);
                 nameP.AppendChild(nameP.OwnerDocument.ImportNode(value, true));
                 nameP.AppendChild(nameP.OwnerDocument.ImportNode(date, true));
-
                 
-
                 root.AppendChild(root.OwnerDocument.ImportNode(nameP, true));
                 doc.Save(filePathParams);
                 Console.WriteLine("Adicionei parametro ao ficheiro param_data.xml!");
@@ -69,7 +67,7 @@ namespace SmartH2O_DLog
                 nameP.AppendChild(nameP.OwnerDocument.ImportNode(rule, true));
 
                 root.AppendChild(root.OwnerDocument.ImportNode(nameP, true));
-                doc.Save(filePathParams);
+                doc.Save(filePathAlarms);
                 Console.WriteLine("Adicionei alarme ao ficheiro alarms-data.xml!");
             }
             
