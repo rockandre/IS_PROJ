@@ -41,19 +41,30 @@ namespace SmartH2O_SeeAPP
 
             if (checkBoxpH.Checked)
             {
-                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("PH");
+                //getInfoByParameter("PH");
             }
 
             if (checkBoxNh3.Checked)
             {
-                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("NH3");
+                //getInfoByParameter("NH3");
             }
 
             if (checkBoxCl2.Checked)
             {
-                //textBoxInfoByPara.Text = textBoxInfoByPara.Text + getInfoByParameter("CI2");
+                //getInfoByParameter("CI2");
             }
 
+        }
+
+        private void buttonSeeInfo2Dates_Click(object sender, EventArgs e)
+        {
+            string date1;
+            string date2;
+
+            date1 = listBoxDayOne.SelectedItem.ToString();
+            date2 = listBoxDayTwo.SelectedItem.ToString();
+
+            //getAlarmInfoTwoDates(date1, date2);
         }
     }
 }

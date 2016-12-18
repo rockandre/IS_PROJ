@@ -16,36 +16,40 @@ namespace SmartH2O_Service
         string FILEPATH = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"App_Data\param-data.xml";
 
 
-        public string getInfoByParameter(string parameter)
+        public List<string> getInfoByParameter(string parameter)
         {
+            List<string> lista = new List<string>();
             string finalString = "";
           
             XmlDocument doc = new XmlDocument();
-            doc.Load(@"App_Data\param-data.xml");
+            doc.Load(FILEPATH);
+            
+            XmlNodeList parameters = doc.SelectNodes("/quality-parameters/parameter[@value = parameter]");
 
-            XmlNodeList parameters = doc.SelectNodes("quality-parameters/"+parameter);
+            
             finalString = finalString + parameter;
-            finalString = finalString + "\n";
+            
             foreach (XmlNode itemValues in parameters)
             {
                 XmlNodeList values = doc.SelectNodes("/quality-parameters/" + parameter+"/value");
-                finalString = finalString + "\tValue: ";
+                finalString = finalString + "   Value: ";
                 foreach (XmlNode item in values)
                 {
                     finalString = finalString + item.InnerText;
                 }
 
                 XmlNodeList dates = doc.SelectNodes("/quality-parameters/" + parameter + "/date");
-                finalString = finalString + "\tDate: ";
+                finalString = finalString + "   Date: ";
                 foreach (XmlNode item1 in dates)
                 {
-                    finalString = finalString + "\t" + item1.InnerText;
+                    finalString = finalString + item1.InnerText;
                 }
+
+                lista.Add(finalString);
             }
-            finalString = finalString + "\n\n";
 
 
-            return finalString;
+            return lista;
         }
 
         public HashSet<string> GetDates()
@@ -63,6 +67,15 @@ namespace SmartH2O_Service
                     lista.Add(item.InnerText.Substring(0, space));
                 }
             }
+
+            return lista;
+        }
+
+
+        public List<string> getAlarmInfoTwoDates(string date1, string date2)
+        {
+            List<string> lista = new List<string>();
+
 
             return lista;
         }

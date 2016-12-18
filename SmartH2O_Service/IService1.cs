@@ -13,10 +13,15 @@ namespace SmartH2O_Service
     public interface IService1
     {
         [OperationContract]
-        string getInfoByParameter(string parameter);
+        List<string> getInfoByParameter(string parameter);
 
         [OperationContract]
         HashSet<string> GetDates();
+
+        [OperationContract]
+        List<string> getAlarmInfoTwoDates(string date1, string date2);
+
+
 
         // TODO: Add your service operations here
     }

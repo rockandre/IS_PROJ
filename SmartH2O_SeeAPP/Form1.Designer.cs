@@ -47,16 +47,13 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.buttonGetAlarmInfo = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.buttonSeeInfo2Dates = new System.Windows.Forms.Button();
             this.listBoxDayTwo = new System.Windows.Forms.ListBox();
             this.listBoxDayOne = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.buttonGetInfoByParameter = new System.Windows.Forms.Button();
-            this.textBoxInfoByPara = new System.Windows.Forms.TextBox();
             this.checkBoxCl2 = new System.Windows.Forms.CheckBox();
             this.checkBoxNh3 = new System.Windows.Forms.CheckBox();
             this.checkBoxpH = new System.Windows.Forms.CheckBox();
@@ -75,6 +72,9 @@
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.listBoxAlarmInfo = new System.Windows.Forms.ListBox();
+            this.listBoxInfoByParameter = new System.Windows.Forms.ListBox();
+            this.listBoxAlarmInfoTwoDates = new System.Windows.Forms.ListBox();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -96,7 +96,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.listBoxAlarmInfo);
             this.groupBox4.Controls.Add(this.buttonGetAlarmInfo);
             this.groupBox4.Location = new System.Drawing.Point(13, 13);
             this.groupBox4.Name = "groupBox4";
@@ -104,14 +104,6 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Raised Alarms Information";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(7, 50);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(378, 252);
-            this.textBox4.TabIndex = 1;
             // 
             // buttonGetAlarmInfo
             // 
@@ -124,7 +116,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox5);
+            this.groupBox5.Controls.Add(this.listBoxAlarmInfoTwoDates);
             this.groupBox5.Controls.Add(this.buttonSeeInfo2Dates);
             this.groupBox5.Controls.Add(this.listBoxDayTwo);
             this.groupBox5.Controls.Add(this.listBoxDayOne);
@@ -135,14 +127,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Alarm Information Beetween 2 Dates";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(6, 150);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(389, 152);
-            this.textBox5.TabIndex = 3;
-            // 
             // buttonSeeInfo2Dates
             // 
             this.buttonSeeInfo2Dates.Location = new System.Drawing.Point(6, 121);
@@ -151,6 +135,7 @@
             this.buttonSeeInfo2Dates.TabIndex = 2;
             this.buttonSeeInfo2Dates.Text = "See Alarms Information Beetween Two Dates";
             this.buttonSeeInfo2Dates.UseVisualStyleBackColor = true;
+            this.buttonSeeInfo2Dates.Click += new System.EventHandler(this.buttonSeeInfo2Dates_Click);
             // 
             // listBoxDayTwo
             // 
@@ -170,8 +155,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.listBoxInfoByParameter);
             this.groupBox6.Controls.Add(this.buttonGetInfoByParameter);
-            this.groupBox6.Controls.Add(this.textBoxInfoByPara);
             this.groupBox6.Controls.Add(this.checkBoxCl2);
             this.groupBox6.Controls.Add(this.checkBoxNh3);
             this.groupBox6.Controls.Add(this.checkBoxpH);
@@ -191,14 +176,6 @@
             this.buttonGetInfoByParameter.Text = "Get Information By Parameter";
             this.buttonGetInfoByParameter.UseVisualStyleBackColor = true;
             this.buttonGetInfoByParameter.Click += new System.EventHandler(this.buttonGetInfoByParameter_Click);
-            // 
-            // textBoxInfoByPara
-            // 
-            this.textBoxInfoByPara.Location = new System.Drawing.Point(6, 71);
-            this.textBoxInfoByPara.Multiline = true;
-            this.textBoxInfoByPara.Name = "textBoxInfoByPara";
-            this.textBoxInfoByPara.Size = new System.Drawing.Size(343, 231);
-            this.textBoxInfoByPara.TabIndex = 3;
             // 
             // checkBoxCl2
             // 
@@ -410,6 +387,30 @@
             this.chart4.TabIndex = 0;
             this.chart4.Text = "chart4";
             // 
+            // listBoxAlarmInfo
+            // 
+            this.listBoxAlarmInfo.FormattingEnabled = true;
+            this.listBoxAlarmInfo.Location = new System.Drawing.Point(7, 50);
+            this.listBoxAlarmInfo.Name = "listBoxAlarmInfo";
+            this.listBoxAlarmInfo.Size = new System.Drawing.Size(378, 251);
+            this.listBoxAlarmInfo.TabIndex = 1;
+            // 
+            // listBoxInfoByParameter
+            // 
+            this.listBoxInfoByParameter.FormattingEnabled = true;
+            this.listBoxInfoByParameter.Location = new System.Drawing.Point(6, 73);
+            this.listBoxInfoByParameter.Name = "listBoxInfoByParameter";
+            this.listBoxInfoByParameter.Size = new System.Drawing.Size(343, 225);
+            this.listBoxInfoByParameter.TabIndex = 5;
+            // 
+            // listBoxAlarmInfoTwoDates
+            // 
+            this.listBoxAlarmInfoTwoDates.FormattingEnabled = true;
+            this.listBoxAlarmInfoTwoDates.Location = new System.Drawing.Point(7, 151);
+            this.listBoxAlarmInfoTwoDates.Name = "listBoxAlarmInfoTwoDates";
+            this.listBoxAlarmInfoTwoDates.Size = new System.Drawing.Size(388, 147);
+            this.listBoxAlarmInfoTwoDates.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScroll = true;
@@ -421,9 +422,7 @@
             this.Controls.Add(this.groupBox4);
             this.Name = "Form1";
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
@@ -463,13 +462,10 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button buttonGetAlarmInfo;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button buttonSeeInfo2Dates;
         private System.Windows.Forms.ListBox listBoxDayTwo;
         private System.Windows.Forms.ListBox listBoxDayOne;
-        private System.Windows.Forms.TextBox textBoxInfoByPara;
         private System.Windows.Forms.CheckBox checkBoxCl2;
         private System.Windows.Forms.CheckBox checkBoxNh3;
         private System.Windows.Forms.CheckBox checkBoxpH;
@@ -489,6 +485,9 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ListBox listBoxAlarmInfo;
+        private System.Windows.Forms.ListBox listBoxAlarmInfoTwoDates;
+        private System.Windows.Forms.ListBox listBoxInfoByParameter;
     }
 }
 
