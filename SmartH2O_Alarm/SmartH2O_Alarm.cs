@@ -32,6 +32,13 @@ namespace SmartH2O_Alarm
                 MessageBox.Show("Error connecting to message broker...");
                 return;
             }
+
+
+            if (m_cClient.IsConnected)
+            {
+                m_cClient.Unsubscribe(m_strTopicsInfo); //Put this in a button to see notif!
+                m_cClient.Disconnect(); //Free process and process's resources
+            }
         }
 
         private void ReadFromXml()
@@ -374,12 +381,6 @@ namespace SmartH2O_Alarm
         private void btnStop_Click(object sender, EventArgs e)
         {
             m_cClient.Unsubscribe(m_strTopicsInfo);
-
-            if (m_cClient.IsConnected)
-            {
-                m_cClient.Unsubscribe(m_strTopicsInfo); //Put this in a button to see notif!
-                m_cClient.Disconnect(); //Free process and process's resources
-            }
         }
     }
 }

@@ -1,491 +1,63 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <quality-parameters>
   <PH>
     <value>6.5</value>
-    <date>18/12/2016 18:39:28</date>
+    <date>18-12-2016 17:08:10</date>
   </PH>
   <NH3>
-    <value>1.77</value>
-    <date>18/12/2016 18:39:36</date>
-  </NH3>
-  <CI2>
-    <value>7.0</value>
-    <date>18/12/2016 18:39:43</date>
-  </CI2>
-  <PH>
-    <value>5.4</value>
-    <date>18/12/2016 18:39:50</date>
-  </PH>
-  <PH>
-    <value>6.5</value>
-    <date>18/12/2016 18:40:05</date>
-  </PH>
-  <NH3>
-    <value>1.3</value>
-    <date>18/12/2016 18:40:05</date>
-  </NH3>
-  <CI2>
-    <value>7.2</value>
-    <date>18/12/2016 18:40:06</date>
-  </CI2>
-  <PH>
-    <value>6.8</value>
-    <date>18/12/2016 18:40:07</date>
-  </PH>
-  <NH3>
-    <value>1.78</value>
-    <date>18/12/2016 18:40:07</date>
-  </NH3>
-  <CI2>
-    <value>10.4</value>
-    <date>18/12/2016 18:40:08</date>
-  </CI2>
-  <PH>
-    <value>5.0</value>
-    <date>18/12/2016 18:40:08</date>
-  </PH>
-  <NH3>
-    <value>1.98</value>
-    <date>18/12/2016 18:40:09</date>
-  </NH3>
-  <CI2>
-    <value>9.3</value>
-    <date>18/12/2016 18:40:09</date>
-  </CI2>
-  <PH>
-    <value>6.3</value>
-    <date>18/12/2016 18:40:10</date>
-  </PH>
-  <NH3>
-    <value>1.96</value>
-    <date>18/12/2016 18:40:10</date>
-  </NH3>
-  <CI2>
-    <value>11.1</value>
-    <date>18/12/2016 18:40:11</date>
-  </CI2>
-  <PH>
-    <value>6.6</value>
-    <date>18/12/2016 18:40:11</date>
-  </PH>
-  <NH3>
-    <value>1.32</value>
-    <date>18/12/2016 18:40:12</date>
-  </NH3>
-  <CI2>
-    <value>9.4</value>
-    <date>18/12/2016 18:40:12</date>
-  </CI2>
-  <PH>
-    <value>5.5</value>
-    <date>18/12/2016 18:40:13</date>
-  </PH>
-  <NH3>
-    <value>1.74</value>
-    <date>18/12/2016 18:40:13</date>
-  </NH3>
-  <CI2>
-    <value>9.3</value>
-    <date>18/12/2016 18:40:14</date>
-  </CI2>
-  <PH>
-    <value>5.7</value>
-    <date>18/12/2016 18:40:14</date>
-  </PH>
-  <NH3>
-    <value>1.44</value>
-    <date>18/12/2016 18:40:15</date>
-  </NH3>
-  <CI2>
-    <value>7.4</value>
-    <date>18/12/2016 18:40:15</date>
-  </CI2>
-  <PH>
-    <value>5.7</value>
-    <date>18/12/2016 18:40:16</date>
-  </PH>
-  <NH3>
-    <value>1.76</value>
-    <date>18/12/2016 18:40:16</date>
-  </NH3>
-  <CI2>
-    <value>8.8</value>
-    <date>18/12/2016 18:40:17</date>
-  </CI2>
-  <PH>
-    <value>6.5</value>
-    <date>18/12/2016 18:40:17</date>
-  </PH>
-  <NH3>
-    <value>1.73</value>
-    <date>18/12/2016 18:40:18</date>
-  </NH3>
-  <CI2>
-    <value>10.4</value>
-    <date>18/12/2016 18:40:18</date>
-  </CI2>
-  <PH>
-    <value>6.7</value>
-    <date>18/12/2016 18:40:19</date>
-  </PH>
-  <NH3>
-    <value>1.95</value>
-    <date>18/12/2016 18:40:19</date>
-  </NH3>
-  <CI2>
-    <value>7.4</value>
-    <date>18/12/2016 18:40:20</date>
-  </CI2>
-  <PH>
-    <value>6.5</value>
-    <date>18/12/2016 18:40:21</date>
-  </PH>
-  <NH3>
-    <value>1.71</value>
-    <date>18/12/2016 18:40:21</date>
-  </NH3>
-  <CI2>
-    <value>10.0</value>
-    <date>18/12/2016 18:40:22</date>
-  </CI2>
-  <PH>
-    <value>6.2</value>
-    <date>18/12/2016 18:40:22</date>
-  </PH>
-  <NH3>
-    <value>1.69</value>
-    <date>18/12/2016 18:40:23</date>
-  </NH3>
-  <CI2>
-    <value>11.4</value>
-    <date>18/12/2016 18:40:23</date>
-  </CI2>
-  <PH>
-    <value>5.3</value>
-    <date>18/12/2016 18:40:24</date>
-  </PH>
-  <NH3>
-    <value>1.3</value>
-    <date>18/12/2016 18:40:24</date>
-  </NH3>
-  <CI2>
-    <value>10.0</value>
-    <date>18/12/2016 18:40:25</date>
-  </CI2>
-  <PH>
-    <value>6.1</value>
-    <date>18/12/2016 18:40:25</date>
-  </PH>
-  <NH3>
-    <value>1.62</value>
-    <date>18/12/2016 18:40:26</date>
-  </NH3>
-  <PH>
-    <value>6.6</value>
-    <date>18/12/2016 18:50:41</date>
-  </PH>
-  <NH3>
-    <value>1.7</value>
-    <date>18/12/2016 18:50:42</date>
-  </NH3>
-  <CI2>
-    <value>11.2</value>
-    <date>18/12/2016 18:50:43</date>
-  </CI2>
-  <PH>
-    <value>6.6</value>
-    <date>18/12/2016 18:50:43</date>
-  </PH>
-  <NH3>
-    <value>1.29</value>
-    <date>18/12/2016 18:50:44</date>
-  </NH3>
-  <CI2>
-    <value>9.4</value>
-    <date>18/12/2016 18:50:44</date>
-  </CI2>
-  <PH>
-    <value>6.6</value>
-    <date>18/12/2016 18:50:45</date>
-  </PH>
-  <NH3>
-    <value>1.89</value>
-    <date>18/12/2016 18:50:45</date>
-  </NH3>
-  <CI2>
-    <value>11.2</value>
-    <date>18/12/2016 18:50:46</date>
-  </CI2>
-  <PH>
-    <value>5.3</value>
-    <date>18/12/2016 18:50:46</date>
-  </PH>
-  <NH3>
-    <value>1.38</value>
-    <date>18/12/2016 18:50:47</date>
-  </NH3>
-  <CI2>
-    <value>10.6</value>
-    <date>18/12/2016 18:50:47</date>
-  </CI2>
-  <PH>
-    <value>6.5</value>
-    <date>18/12/2016 18:50:48</date>
-  </PH>
-  <NH3>
-    <value>1.0</value>
-    <date>18/12/2016 18:50:48</date>
-  </NH3>
-  <CI2>
-    <value>10.7</value>
-    <date>18/12/2016 18:50:49</date>
-  </CI2>
-  <PH>
-    <value>5.2</value>
-    <date>18/12/2016 18:50:49</date>
-  </PH>
-  <NH3>
-    <value>1.96</value>
-    <date>18/12/2016 18:50:50</date>
-  </NH3>
-  <CI2>
-    <value>9.3</value>
-    <date>18/12/2016 18:50:50</date>
-  </CI2>
-  <PH>
-    <value>5.0</value>
-    <date>18/12/2016 18:50:51</date>
-  </PH>
-  <NH3>
-    <value>1.70</value>
-    <date>18/12/2016 18:50:51</date>
-  </NH3>
-  <CI2>
-    <value>9.0</value>
-    <date>18/12/2016 18:50:52</date>
-  </CI2>
-  <PH>
-    <value>5.1</value>
-    <date>18/12/2016 18:50:52</date>
-  </PH>
-  <NH3>
-    <value>1.38</value>
-    <date>18/12/2016 18:50:53</date>
-  </NH3>
-  <CI2>
-    <value>10.6</value>
-    <date>18/12/2016 18:50:53</date>
-  </CI2>
-  <PH>
-    <value>6.5</value>
-    <date>18/12/2016 18:50:54</date>
-  </PH>
-  <NH3>
-    <value>1.54</value>
-    <date>18/12/2016 18:50:54</date>
-  </NH3>
-  <CI2>
-    <value>9.8</value>
-    <date>18/12/2016 18:50:55</date>
-  </CI2>
-  <PH>
-    <value>5.3</value>
-    <date>18/12/2016 18:50:55</date>
-  </PH>
-  <NH3>
-    <value>1.1</value>
-    <date>18/12/2016 18:50:56</date>
-  </NH3>
-  <CI2>
-    <value>9.1</value>
-    <date>18/12/2016 18:50:56</date>
-  </CI2>
-  <PH>
-    <value>6.8</value>
-    <date>18/12/2016 18:50:57</date>
-  </PH>
-  <NH3>
-    <value>1.88</value>
-    <date>18/12/2016 18:50:57</date>
-  </NH3>
-  <PH>
-    <value>5.1</value>
-    <date>18/12/2016 18:53:17</date>
-  </PH>
-  <NH3>
-    <value>1.51</value>
-    <date>18/12/2016 18:53:18</date>
-  </NH3>
-  <CI2>
-    <value>8.2</value>
-    <date>18/12/2016 18:53:18</date>
-  </CI2>
-  <PH>
-    <value>6.2</value>
-    <date>18/12/2016 18:53:19</date>
-  </PH>
-  <NH3>
-    <value>1.70</value>
-    <date>18/12/2016 18:53:19</date>
-  </NH3>
-  <CI2>
-    <value>7.0</value>
-    <date>18/12/2016 18:53:20</date>
-  </CI2>
-  <PH>
-    <value>6.8</value>
-    <date>18/12/2016 18:53:21</date>
-  </PH>
-  <NH3>
-    <value>1.44</value>
-    <date>18/12/2016 18:53:21</date>
-  </NH3>
-  <CI2>
-    <value>8.6</value>
-    <date>18/12/2016 18:53:22</date>
-  </CI2>
-  <PH>
-    <value>6.0</value>
-    <date>18/12/2016 18:53:22</date>
-  </PH>
-  <NH3>
-    <value>1.76</value>
-    <date>18/12/2016 18:53:23</date>
-  </NH3>
-  <CI2>
-    <value>8.3</value>
-    <date>18/12/2016 18:53:23</date>
-  </CI2>
-  <PH>
-    <value>6.0</value>
-    <date>18/12/2016 18:53:24</date>
-  </PH>
-  <NH3>
-    <value>1.50</value>
-    <date>18/12/2016 18:53:24</date>
-  </NH3>
-  <CI2>
-    <value>8.1</value>
-    <date>18/12/2016 18:53:25</date>
-  </CI2>
-  <PH>
-    <value>5.1</value>
-    <date>18/12/2016 18:53:25</date>
-  </PH>
-  <NH3>
-    <value>1.3</value>
-    <date>18/12/2016 18:53:26</date>
-  </NH3>
-  <CI2>
-    <value>8.6</value>
-    <date>18/12/2016 18:53:26</date>
-  </CI2>
-  <PH>
-    <value>6.5</value>
-    <date>18/12/2016 18:53:27</date>
-  </PH>
-  <NH3>
-    <value>1.69</value>
-    <date>18/12/2016 18:53:27</date>
-  </NH3>
-  <CI2>
-    <value>7.7</value>
-    <date>18/12/2016 18:53:28</date>
-  </CI2>
-  <PH>
-    <value>6.8</value>
-    <date>18/12/2016 18:53:28</date>
-  </PH>
-  <NH3>
-    <value>1.52</value>
-    <date>18/12/2016 18:53:29</date>
-  </NH3>
-  <NH3>
-    <value>1.34</value>
-    <date>18/12/2016 18:54:16</date>
-  </NH3>
-  <CI2>
-    <value>9.2</value>
-    <date>18/12/2016 18:54:17</date>
-  </CI2>
-  <PH>
-    <value>5.7</value>
-    <date>18/12/2016 18:54:17</date>
-  </PH>
-  <NH3>
-    <value>1.54</value>
-    <date>18/12/2016 18:54:18</date>
-  </NH3>
-  <CI2>
-    <value>9.2</value>
-    <date>18/12/2016 18:54:18</date>
-  </CI2>
-  <PH>
-    <value>6.1</value>
-    <date>18/12/2016 18:54:19</date>
-  </PH>
-  <NH3>
-    <value>1.90</value>
-    <date>18/12/2016 18:54:20</date>
-  </NH3>
-  <CI2>
-    <value>11.5</value>
-    <date>18/12/2016 18:54:20</date>
-  </CI2>
-  <PH>
-    <value>6.7</value>
-    <date>18/12/2016 18:54:21</date>
-  </PH>
-  <NH3>
-    <value>1.88</value>
-    <date>18/12/2016 18:54:21</date>
+    <value>1.93</value>
+    <date>18-12-2016 17:08:17</date>
   </NH3>
   <CI2>
     <value>11.6</value>
-    <date>18/12/2016 18:54:22</date>
-  </CI2>
-  <PH>
-    <value>6.4</value>
-    <date>18/12/2016 18:54:22</date>
-  </PH>
-  <NH3>
-    <value>1.48</value>
-    <date>18/12/2016 18:54:23</date>
-  </NH3>
-  <CI2>
-    <value>7.5</value>
-    <date>18/12/2016 18:54:23</date>
-  </CI2>
-  <PH>
-    <value>6.6</value>
-    <date>18/12/2016 18:54:24</date>
-  </PH>
-  <NH3>
-    <value>1.7</value>
-    <date>18/12/2016 18:54:24</date>
-  </NH3>
-  <CI2>
-    <value>10.6</value>
-    <date>18/12/2016 18:54:25</date>
+    <date>18-12-2016 17:08:24</date>
   </CI2>
   <PH>
     <value>6.2</value>
-    <date>18/12/2016 18:54:25</date>
+    <date>18-12-2016 17:08:31</date>
   </PH>
   <NH3>
-    <value>1.26</value>
-    <date>18/12/2016 18:54:26</date>
+    <value>1.61</value>
+    <date>18-12-2016 17:08:38</date>
   </NH3>
   <CI2>
-    <value>10.8</value>
-    <date>18/12/2016 18:54:26</date>
+    <value>7.8</value>
+    <date>18-12-2016 17:08:45</date>
   </CI2>
   <PH>
-    <value>5.7</value>
-    <date>18/12/2016 18:54:27</date>
+    <value>5.1</value>
+    <date>18-12-2016 17:08:53</date>
+  </PH>
+  <PH>
+    <value>5.3</value>
+    <date>19-12-2016 10:44:23</date>
   </PH>
   <NH3>
-    <value>1.5</value>
-    <date>18/12/2016 18:54:27</date>
+    <value>1.45</value>
+    <date>19-12-2016 10:44:30</date>
   </NH3>
+  <CI2>
+    <value>7.5</value>
+    <date>19-12-2016 10:44:37</date>
+  </CI2>
+  <PH>
+    <value>6.6</value>
+    <date>19-12-2016 10:44:44</date>
+  </PH>
+  <PH>
+    <value>6.2</value>
+    <date>19-12-2016 11:02:32</date>
+  </PH>
+  <NH3>
+    <value>1.12</value>
+    <date>19-12-2016 11:02:39</date>
+  </NH3>
+  <CI2>
+    <value>9.4</value>
+    <date>19-12-2016 11:02:46</date>
+  </CI2>
+  <PH>
+    <value>5.6</value>
+    <date>19-12-2016 11:02:53</date>
+  </PH>
 </quality-parameters>
