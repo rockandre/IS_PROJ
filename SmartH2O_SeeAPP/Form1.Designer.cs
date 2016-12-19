@@ -1,21 +1,4 @@
-﻿Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @rockandre
- Unwatch 2
-  Star 0
-  Fork 0 rockandre/IS_PROJ
- Code  Issues 0  Pull requests 0  Projects 0  Wiki Pulse  Graphs Settings
-Tree: a0a418b223 Find file Copy pathIS_PROJ/SmartH2O_SeeAPP/Form1.Designer.cs
-a0a418b  17 hours ago
-@rockandre rockandre Correction of bugs on log and alarm.
-2 contributors @fabiolage @rockandre
-RawBlameHistory
-488 lines(480 sloc)  27.7 KB
-namespace SmartH2O_SeeAPP
+﻿namespace SmartH2O_SeeAPP
 {
     partial class Form1
     {
@@ -73,16 +56,16 @@ namespace SmartH2O_SeeAPP
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint20 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42728D, "0,0");
             System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint21 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42729D, "0,0");
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.listBoxAlarmInfo = new System.Windows.Forms.ListBox();
             this.buttonGetAlarmInfo = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.listBoxAlarmsDateTwoDates = new System.Windows.Forms.ListBox();
             this.buttonSeeInfo2Dates = new System.Windows.Forms.Button();
             this.listBoxDayTwo = new System.Windows.Forms.ListBox();
             this.listBoxDayOne = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.listBoxInfoByParameter = new System.Windows.Forms.ListBox();
             this.buttonGetInfoByParameter = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.checkBoxCI2 = new System.Windows.Forms.CheckBox();
             this.checkBoxNh3 = new System.Windows.Forms.CheckBox();
             this.checkBoxpH = new System.Windows.Forms.CheckBox();
@@ -110,7 +93,7 @@ namespace SmartH2O_SeeAPP
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.listBoxAlarmInfo);
             this.groupBox4.Controls.Add(this.buttonGetAlarmInfo);
             this.groupBox4.Location = new System.Drawing.Point(13, 13);
             this.groupBox4.Name = "groupBox4";
@@ -119,13 +102,13 @@ namespace SmartH2O_SeeAPP
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Raised Alarms Information";
             // 
-            // textBox4
+            // listBoxAlarmInfo
             // 
-            this.textBox4.Location = new System.Drawing.Point(7, 50);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(378, 252);
-            this.textBox4.TabIndex = 1;
+            this.listBoxAlarmInfo.FormattingEnabled = true;
+            this.listBoxAlarmInfo.Location = new System.Drawing.Point(7, 49);
+            this.listBoxAlarmInfo.Name = "listBoxAlarmInfo";
+            this.listBoxAlarmInfo.Size = new System.Drawing.Size(378, 251);
+            this.listBoxAlarmInfo.TabIndex = 1;
             // 
             // buttonGetAlarmInfo
             // 
@@ -138,7 +121,7 @@ namespace SmartH2O_SeeAPP
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.textBox5);
+            this.groupBox5.Controls.Add(this.listBoxAlarmsDateTwoDates);
             this.groupBox5.Controls.Add(this.buttonSeeInfo2Dates);
             this.groupBox5.Controls.Add(this.listBoxDayTwo);
             this.groupBox5.Controls.Add(this.listBoxDayOne);
@@ -149,13 +132,13 @@ namespace SmartH2O_SeeAPP
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Alarm Information Beetween 2 Dates";
             // 
-            // textBox5
+            // listBoxAlarmsDateTwoDates
             // 
-            this.textBox5.Location = new System.Drawing.Point(6, 150);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(389, 152);
-            this.textBox5.TabIndex = 3;
+            this.listBoxAlarmsDateTwoDates.FormattingEnabled = true;
+            this.listBoxAlarmsDateTwoDates.Location = new System.Drawing.Point(7, 151);
+            this.listBoxAlarmsDateTwoDates.Name = "listBoxAlarmsDateTwoDates";
+            this.listBoxAlarmsDateTwoDates.Size = new System.Drawing.Size(388, 147);
+            this.listBoxAlarmsDateTwoDates.TabIndex = 3;
             // 
             // buttonSeeInfo2Dates
             // 
@@ -184,8 +167,8 @@ namespace SmartH2O_SeeAPP
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.listBoxInfoByParameter);
             this.groupBox6.Controls.Add(this.buttonGetInfoByParameter);
-            this.groupBox6.Controls.Add(this.textBox6);
             this.groupBox6.Controls.Add(this.checkBoxCI2);
             this.groupBox6.Controls.Add(this.checkBoxNh3);
             this.groupBox6.Controls.Add(this.checkBoxpH);
@@ -196,22 +179,22 @@ namespace SmartH2O_SeeAPP
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Information By Parameter";
             // 
+            // listBoxInfoByParameter
+            // 
+            this.listBoxInfoByParameter.FormattingEnabled = true;
+            this.listBoxInfoByParameter.Location = new System.Drawing.Point(6, 72);
+            this.listBoxInfoByParameter.Name = "listBoxInfoByParameter";
+            this.listBoxInfoByParameter.Size = new System.Drawing.Size(343, 225);
+            this.listBoxInfoByParameter.TabIndex = 5;
+            // 
             // buttonGetInfoByParameter
             // 
-            this.buttonGetInfoByParameter.Location = new System.Drawing.Point(7, 43);
+            this.buttonGetInfoByParameter.Location = new System.Drawing.Point(6, 43);
             this.buttonGetInfoByParameter.Name = "buttonGetInfoByParameter";
-            this.buttonGetInfoByParameter.Size = new System.Drawing.Size(342, 23);
+            this.buttonGetInfoByParameter.Size = new System.Drawing.Size(343, 23);
             this.buttonGetInfoByParameter.TabIndex = 4;
             this.buttonGetInfoByParameter.Text = "Get Information By Parameter";
             this.buttonGetInfoByParameter.UseVisualStyleBackColor = true;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(6, 71);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(343, 231);
-            this.textBox6.TabIndex = 3;
             // 
             // checkBoxCI2
             // 
@@ -443,9 +426,7 @@ namespace SmartH2O_SeeAPP
             this.MinimumSize = new System.Drawing.Size(1200, 715);
             this.Name = "Form1";
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox12.ResumeLayout(false);
@@ -461,30 +442,13 @@ namespace SmartH2O_SeeAPP
 
         #endregion
 
-        private System.Windows.Forms.Button buttonAlarmInfo2Dates;
-        private System.Windows.Forms.ListBox listBoxDay1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBoxDay2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button buttonGetAlarmInfo;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button buttonSeeInfo2Dates;
         private System.Windows.Forms.ListBox listBoxDayTwo;
         private System.Windows.Forms.ListBox listBoxDayOne;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.CheckBox checkBoxCI2;
         private System.Windows.Forms.CheckBox checkBoxNh3;
         private System.Windows.Forms.CheckBox checkBoxpH;
@@ -499,5 +463,8 @@ namespace SmartH2O_SeeAPP
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPH;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.ListBox listBoxAlarmInfo;
+        private System.Windows.Forms.ListBox listBoxAlarmsDateTwoDates;
+        private System.Windows.Forms.ListBox listBoxInfoByParameter;
     }
 }

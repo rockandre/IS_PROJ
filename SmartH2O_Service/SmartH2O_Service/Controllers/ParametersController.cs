@@ -80,7 +80,7 @@ namespace SmartH2O_Service.Controllers
         }
 
         [Route("parameters/{name}/{year}/{month}/{day}")]
-        public IHttpActionResult GetParametersByDaily(string name, string year, string month, string day)
+        public IHttpActionResult GetParametersHourlyByDay(string name, string year, string month, string day)
         {
             name = name.ToUpper();
             if (name == "PH" || name == "CI2" || name == "NH3")
@@ -229,6 +229,26 @@ namespace SmartH2O_Service.Controllers
             {
                 return NotFound();
             }
+        }
+
+        [Route("parameters/{name}/{date1}/{date2}")]
+        public IHttpActionResult GetParametersByDay(string name, DateTime date1, DateTime date2)
+        {
+            name = name.ToUpper();
+            if (name == "PH" || name == "CI2" || name == "NH3")
+            {
+                List<Parameter> lista = new List<Parameter>();
+                XmlDocument doc = new XmlDocument();
+                doc.Load(FILEPATH);
+
+                XmlNodeList parameters = doc.SelectNodes("quality-parameters/" + name);
+                foreach (XmlNode item in parameters)
+                {
+
+                }
+
+            }
+                return NotFound();
         }
     }
 }
