@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using SmartH2O_Service.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,12 +44,15 @@ namespace SmartH2O_SeeAPP
             DateTime data = Convert.ToDateTime(dateTimePickerDay.Value.Date.ToString("dd-MM-yyyy"));
             groupBoxGraphs.Text = "Daily Statistics By Hour";
 
-            HttpWebRequest requestPH = (HttpWebRequest) WebRequest.Create(@"http://localhost:55500/parameters/PH/2016/12/18");
-            HttpWebResponse response = (HttpWebResponse) requestPH.GetResponse();
-            XmlDocument doc = new XmlDocument();
-            doc.Load(response.GetResponseStream());
+            HttpWebRequest requestPH = WebRequest.Create(@"http://localhost:55500/parameters/PH/2016/12/18") as HttpWebRequest;
+            requestPH.ContentType = "application/json";
+            HttpWebResponse response = requestPH.GetResponse() as HttpWebResponse;
+            string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            List<Hour> lista = JsonConvert.DeserializeObject<List<Hour>>(json);
+            /*XmlDocument doc = new XmlDocument();
+            doc.Load(response.GetResponseStream());*/
 
-            MessageBox.Show(doc.OuterXml);
+            MessageBox.Show(""+lista[24].hour+"-> "+lista[24].avg);
         }
 
         private void buttonGetInfoByParameter_Click(object sender, EventArgs e)

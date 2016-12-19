@@ -140,8 +140,9 @@ namespace SmartH2O_Service.Controllers
                     }
                 }
                 
-                listAvgHourAndMaxMin.Add(new Hour { hour = 25, avg = min });
-                listAvgHourAndMaxMin.Add(new Hour { hour = 26, avg = max });
+                listAvgHourAndMaxMin.Add(new Hour { hour = 24, avg = min });
+                listAvgHourAndMaxMin.Add(new Hour { hour = 25, avg = max });
+                
 
                 return Ok(listAvgHourAndMaxMin);
             }
