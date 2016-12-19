@@ -9,7 +9,8 @@ namespace SmartH2O_Service.Models
     {
         public string Name { get; set; }
         public string Value { get; set; }
-        public string Date { get; set; }
-        public string Rule { get; set; }
+        public DateTime Date { get; set; }
+        public string RuleOperator { get; set; }
+        public string RuleValue { get; set; }
     }
 }
