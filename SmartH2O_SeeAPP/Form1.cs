@@ -25,15 +25,14 @@ namespace SmartH2O_SeeAPP
 
         private void btnStatsByDay_Click(object sender, EventArgs e)
         {
-            /*groupBoxGraphs.Text = "Weekly Statistics By Day";
-            chartPH.Series.Add("PH");
-            chartPH.ChartAreas.Add("ChartAreaPH");
-            chartPH.ChartAreas["ChartAreaPH"].AxisX.Name = "Hours";*/
+            /*groupBoxGraphs.Text = "Weekly Statistics By Day";*/
         }
 
         private void btnStatsByHour_Click(object sender, EventArgs e)
         {
-           // groupBoxGraphs.Text = "Daily Statistics By Hour";
+            
+            groupBoxGraphs.Text = "Daily Statistics By Hour";
+
         }
 
         private void buttonGetInfoByParameter_Click(object sender, EventArgs e)
@@ -49,7 +48,7 @@ namespace SmartH2O_SeeAPP
                 //getInfoByParameter("NH3");
             }
 
-            if (checkBoxCl2.Checked)
+            if (checkBoxCI2.Checked)
             {
                 //getInfoByParameter("CI2");
             }

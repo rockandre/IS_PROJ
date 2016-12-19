@@ -83,7 +83,7 @@ namespace SmartH2O_SeeAPP
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.buttonGetInfoByParameter = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.checkBoxCl4 = new System.Windows.Forms.CheckBox();
+            this.checkBoxCI2 = new System.Windows.Forms.CheckBox();
             this.checkBoxNh3 = new System.Windows.Forms.CheckBox();
             this.checkBoxpH = new System.Windows.Forms.CheckBox();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
@@ -94,8 +94,8 @@ namespace SmartH2O_SeeAPP
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.groupBoxGraphs = new System.Windows.Forms.GroupBox();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBoxGraphs = new System.Windows.Forms.GroupBox();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -104,8 +104,8 @@ namespace SmartH2O_SeeAPP
             this.groupBox13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBox14.SuspendLayout();
-            this.groupBoxGraphs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            this.groupBoxGraphs.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -186,7 +186,7 @@ namespace SmartH2O_SeeAPP
             // 
             this.groupBox6.Controls.Add(this.buttonGetInfoByParameter);
             this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.checkBoxCl4);
+            this.groupBox6.Controls.Add(this.checkBoxCI2);
             this.groupBox6.Controls.Add(this.checkBoxNh3);
             this.groupBox6.Controls.Add(this.checkBoxpH);
             this.groupBox6.Location = new System.Drawing.Point(817, 13);
@@ -213,15 +213,15 @@ namespace SmartH2O_SeeAPP
             this.textBox6.Size = new System.Drawing.Size(343, 231);
             this.textBox6.TabIndex = 3;
             // 
-            // checkBoxCl4
+            // checkBoxCI2
             // 
-            this.checkBoxCl4.AutoSize = true;
-            this.checkBoxCl4.Location = new System.Drawing.Point(269, 19);
-            this.checkBoxCl4.Name = "checkBoxCl4";
-            this.checkBoxCl4.Size = new System.Drawing.Size(45, 17);
-            this.checkBoxCl4.TabIndex = 2;
-            this.checkBoxCl4.Text = "CL2";
-            this.checkBoxCl4.UseVisualStyleBackColor = true;
+            this.checkBoxCI2.AutoSize = true;
+            this.checkBoxCI2.Location = new System.Drawing.Point(269, 19);
+            this.checkBoxCI2.Name = "checkBoxCI2";
+            this.checkBoxCI2.Size = new System.Drawing.Size(42, 17);
+            this.checkBoxCI2.TabIndex = 2;
+            this.checkBoxCI2.Text = "CI2";
+            this.checkBoxCI2.UseVisualStyleBackColor = true;
             // 
             // checkBoxNh3
             // 
@@ -376,18 +376,6 @@ namespace SmartH2O_SeeAPP
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "CL2";
             // 
-            // groupBoxGraphs
-            // 
-            this.groupBoxGraphs.Controls.Add(this.groupBox14);
-            this.groupBoxGraphs.Controls.Add(this.groupBox13);
-            this.groupBoxGraphs.Controls.Add(this.groupBox12);
-            this.groupBoxGraphs.Location = new System.Drawing.Point(12, 356);
-            this.groupBoxGraphs.Name = "groupBoxGraphs";
-            this.groupBoxGraphs.Size = new System.Drawing.Size(1160, 295);
-            this.groupBoxGraphs.TabIndex = 4;
-            this.groupBoxGraphs.TabStop = false;
-            this.groupBoxGraphs.Text = "Weekly Statistics By Day";
-            // 
             // chart2
             // 
             chartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
@@ -426,6 +414,18 @@ namespace SmartH2O_SeeAPP
             this.chart2.TabIndex = 3;
             this.chart2.Text = "chartNH3";
             // 
+            // groupBoxGraphs
+            // 
+            this.groupBoxGraphs.Controls.Add(this.groupBox14);
+            this.groupBoxGraphs.Controls.Add(this.groupBox13);
+            this.groupBoxGraphs.Controls.Add(this.groupBox12);
+            this.groupBoxGraphs.Location = new System.Drawing.Point(12, 356);
+            this.groupBoxGraphs.Name = "groupBoxGraphs";
+            this.groupBoxGraphs.Size = new System.Drawing.Size(1160, 295);
+            this.groupBoxGraphs.TabIndex = 4;
+            this.groupBoxGraphs.TabStop = false;
+            this.groupBoxGraphs.Text = "Weekly Statistics By Day";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -453,8 +453,8 @@ namespace SmartH2O_SeeAPP
             this.groupBox13.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBox14.ResumeLayout(false);
-            this.groupBoxGraphs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            this.groupBoxGraphs.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -485,7 +485,7 @@ namespace SmartH2O_SeeAPP
         private System.Windows.Forms.ListBox listBoxDayTwo;
         private System.Windows.Forms.ListBox listBoxDayOne;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.CheckBox checkBoxCl4;
+        private System.Windows.Forms.CheckBox checkBoxCI2;
         private System.Windows.Forms.CheckBox checkBoxNh3;
         private System.Windows.Forms.CheckBox checkBoxpH;
         private System.Windows.Forms.Button buttonGetInfoByParameter;
