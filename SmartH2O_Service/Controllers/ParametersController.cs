@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.IO;
 using System.Web;
 using System.Xml;
+using System.Globalization;
 
 namespace SmartH2O_Service.Controllers
 {
@@ -148,6 +149,45 @@ namespace SmartH2O_Service.Controllers
             {
                 return NotFound();
             }
-        }        
+        }
+
+        [Route("parameters/{name}/{year1}/{month1}/{day1}/{year2}/{month2}/{day2}")]
+        public IHttpActionResult GetParametersByDay(string name, int year1, int month1, int day1,
+                                                                int year2, int month2, int day2)
+        {
+            name = name.ToUpper();
+            if (name == "PH" || name == "CI2" || name == "NH3")
+            {
+                List<Parameter> lista = new List<Parameter>();
+                List<DateTime> lista1 = new List<DateTime>();
+                XmlDocument doc = new XmlDocument();
+                doc.Load(FILEPATH);
+
+                DateTime date1 = new DateTime(year1, month1, day1);
+                DateTime date2 = new DateTime(year2, month2, day2);
+
+                XmlNodeList parameters = doc.SelectNodes("quality-parameters/" + name);
+                foreach (XmlNode item in parameters)
+                {
+                    int spacePosition=0;
+                    string value = item.SelectSingleNode("date").InnerText;
+
+                    spacePosition = value.ToString().IndexOf(" ");
+                    
+                    DateTime dt = DateTime.Parse(item.SelectSingleNode("date").InnerText, new CultureInfo("en-CA"));
+                    lista1.Add(dt);          
+
+                }
+
+                return Ok(lista1);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
+
+  
+
     }
 }
