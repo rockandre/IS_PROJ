@@ -86,14 +86,18 @@ namespace SmartH2O_Service.Controllers
             name = name.ToUpper();
             if (name == "PH" || name == "CI2" || name == "NH3")
             {
-                List<Parameter> lista = new List<Parameter>();
-                List<float> listAvgHourAndMaxMin = new List<float>();
+                List<Hour> listAvgHourAndMaxMin = new List<Hour>();
                 float[] avgHour = new float[24];
                 float[] sumValues = new float[24];
                 int[] counterHour = new int[24];
                 float min = 40;
                 float max = 1;
                 
+                for (int i = 0; i < 24; i++)
+                {
+                    sumValues[i] = 0;
+                    counterHour[i] = 0;
+                }
                 XmlDocument doc = new XmlDocument();
                 doc.Load(FILEPATH);
 
@@ -204,25 +208,31 @@ namespace SmartH2O_Service.Controllers
                                 counterHour[23]++;
                                 break;
                         }
-                    }
-                    
-                    if (float.Parse(value.Replace('.', ',')) <= min)
-                    {
-                        min = float.Parse(value.Replace('.', ','));
-                    }
-                    if (float.Parse(value.Replace('.', ',')) >= max)
-                    {
-                        max = float.Parse(value.Replace('.', ','));
+
+                        if (float.Parse(value.Replace('.', ',')) <= min)
+                        {
+                            min = float.Parse(value.Replace('.', ','));
+                        }
+                        if (float.Parse(value.Replace('.', ',')) >= max)
+                        {
+                            max = float.Parse(value.Replace('.', ','));
+                        }
                     }
                 }
 
-                for (int i = 0; i < 24; i++)
+                for (int j = 0; j < 24; j++)
                 {
-                    listAvgHourAndMaxMin[i] = (sumValues[i] / counterHour[i]);
+                    if (counterHour[j] != 0)
+                    {
+                        listAvgHourAndMaxMin.Add(new Hour { hour = j, avg = sumValues[j] / counterHour[j] });
+                    } else
+                    {
+                        listAvgHourAndMaxMin.Add(new Hour { hour = j, avg = 0 });
+                    }
                 }
 
-                listAvgHourAndMaxMin[24] = min;
-                listAvgHourAndMaxMin[25] = max;
+                listAvgHourAndMaxMin.Add(new Hour { hour = 25, avg = min });
+                listAvgHourAndMaxMin.Add(new Hour { hour = 26, avg = max });
 
                 return Ok(listAvgHourAndMaxMin);
             }

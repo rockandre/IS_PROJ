@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<alarms>
-  <PH>
-    <value>6.2</value>
-    <date>18-12-2016 17:08:31</date>
-    <rule rule_operator="equal" rule_value="6" />
-  </PH>
-</alarms>

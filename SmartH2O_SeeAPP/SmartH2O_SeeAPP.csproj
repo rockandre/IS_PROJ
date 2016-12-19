@@ -82,6 +82,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartH2O_Service\SmartH2O_Service\SmartH2O_Service.csproj">
+      <Project>{3318BC9B-3F75-4455-9BF4-FF8F3C9C9D7F}</Project>
+      <Name>SmartH2O_Service</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
