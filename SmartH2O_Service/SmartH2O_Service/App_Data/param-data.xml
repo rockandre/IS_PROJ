@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <quality-parameters>
   <PH>
     <value>6.5</value>
@@ -470,7 +470,7 @@
   </CI2>
   <PH>
     <value>6.2</value>
-    <date>18/12/2016 18:54:25</date>
+    <date>10/12/2016 18:54:25</date>
   </PH>
   <NH3>
     <value>1.26</value>
@@ -482,7 +482,7 @@
   </CI2>
   <PH>
     <value>5.7</value>
-    <date>18/12/2016 18:54:27</date>
+    <date>25/12/2016 18:54:27</date>
   </PH>
   <NH3>
     <value>1.5</value>

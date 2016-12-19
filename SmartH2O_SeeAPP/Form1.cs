@@ -20,7 +20,7 @@ namespace SmartH2O_SeeAPP
         private void buttonGetDays_Click(object sender, EventArgs e)
         {
             HandlerXML myClass = new HandlerXML("param-data.xml");
-            listBoxDay1.DataSource = myClass.GetDays();
+            listBoxDayOne.DataSource = myClass.GetDays();
         }
 
         private void btnStatsByDay_Click(object sender, EventArgs e)
