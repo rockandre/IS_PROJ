@@ -1,5 +1,4 @@
-﻿using SmartH2O_Service.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,6 +30,11 @@ namespace SmartH2O_SeeAPP
         private void btnStatsByDay_Click(object sender, EventArgs e)
         {
             groupBoxGraphs.Text = "Weekly Statistics By Day";
+
+            DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
+            Calendar cal = dfi.Calendar;
+
+            //cal.GetWeekOfYear();
         }
 
         private void btnStatsByHour_Click(object sender, EventArgs e)
@@ -39,9 +43,11 @@ namespace SmartH2O_SeeAPP
             groupBoxGraphs.Text = "Daily Statistics By Hour";
 
             HttpWebRequest requestPH = (HttpWebRequest) WebRequest.Create(@"http://localhost:55500/parameters/PH/2016/12/18");
-            HttpWebResponse response = (HttpWebResponse)requestPH.GetResponse();
-            string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
-            MessageBox.Show(content);
+            HttpWebResponse response = (HttpWebResponse) requestPH.GetResponse();
+            XmlDocument doc = new XmlDocument();
+            doc.Load(response.GetResponseStream());
+
+            MessageBox.Show(doc.OuterXml);
         }
 
         private void buttonGetInfoByParameter_Click(object sender, EventArgs e)
