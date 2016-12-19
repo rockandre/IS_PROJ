@@ -47,12 +47,15 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.listBoxAlarmInfo = new System.Windows.Forms.ListBox();
             this.buttonGetAlarmInfo = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.listBoxAlarmInfoTwoDates = new System.Windows.Forms.ListBox();
             this.buttonSeeInfo2Dates = new System.Windows.Forms.Button();
             this.listBoxDayTwo = new System.Windows.Forms.ListBox();
             this.listBoxDayOne = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.listBoxInfoByParameter = new System.Windows.Forms.ListBox();
             this.buttonGetInfoByParameter = new System.Windows.Forms.Button();
             this.checkBoxCl2 = new System.Windows.Forms.CheckBox();
             this.checkBoxNh3 = new System.Windows.Forms.CheckBox();
@@ -72,9 +75,6 @@
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.listBoxAlarmInfo = new System.Windows.Forms.ListBox();
-            this.listBoxInfoByParameter = new System.Windows.Forms.ListBox();
-            this.listBoxAlarmInfoTwoDates = new System.Windows.Forms.ListBox();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -105,6 +105,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Raised Alarms Information";
             // 
+            // listBoxAlarmInfo
+            // 
+            this.listBoxAlarmInfo.FormattingEnabled = true;
+            this.listBoxAlarmInfo.Location = new System.Drawing.Point(7, 50);
+            this.listBoxAlarmInfo.Name = "listBoxAlarmInfo";
+            this.listBoxAlarmInfo.Size = new System.Drawing.Size(378, 251);
+            this.listBoxAlarmInfo.TabIndex = 1;
+            // 
             // buttonGetAlarmInfo
             // 
             this.buttonGetAlarmInfo.Location = new System.Drawing.Point(7, 20);
@@ -126,6 +134,14 @@
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Alarm Information Beetween 2 Dates";
+            // 
+            // listBoxAlarmInfoTwoDates
+            // 
+            this.listBoxAlarmInfoTwoDates.FormattingEnabled = true;
+            this.listBoxAlarmInfoTwoDates.Location = new System.Drawing.Point(7, 151);
+            this.listBoxAlarmInfoTwoDates.Name = "listBoxAlarmInfoTwoDates";
+            this.listBoxAlarmInfoTwoDates.Size = new System.Drawing.Size(388, 147);
+            this.listBoxAlarmInfoTwoDates.TabIndex = 3;
             // 
             // buttonSeeInfo2Dates
             // 
@@ -166,6 +182,14 @@
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Information By Parameter";
+            // 
+            // listBoxInfoByParameter
+            // 
+            this.listBoxInfoByParameter.FormattingEnabled = true;
+            this.listBoxInfoByParameter.Location = new System.Drawing.Point(6, 73);
+            this.listBoxInfoByParameter.Name = "listBoxInfoByParameter";
+            this.listBoxInfoByParameter.Size = new System.Drawing.Size(343, 225);
+            this.listBoxInfoByParameter.TabIndex = 5;
             // 
             // buttonGetInfoByParameter
             // 
@@ -386,30 +410,6 @@
             this.chart4.Size = new System.Drawing.Size(365, 257);
             this.chart4.TabIndex = 0;
             this.chart4.Text = "chart4";
-            // 
-            // listBoxAlarmInfo
-            // 
-            this.listBoxAlarmInfo.FormattingEnabled = true;
-            this.listBoxAlarmInfo.Location = new System.Drawing.Point(7, 50);
-            this.listBoxAlarmInfo.Name = "listBoxAlarmInfo";
-            this.listBoxAlarmInfo.Size = new System.Drawing.Size(378, 251);
-            this.listBoxAlarmInfo.TabIndex = 1;
-            // 
-            // listBoxInfoByParameter
-            // 
-            this.listBoxInfoByParameter.FormattingEnabled = true;
-            this.listBoxInfoByParameter.Location = new System.Drawing.Point(6, 73);
-            this.listBoxInfoByParameter.Name = "listBoxInfoByParameter";
-            this.listBoxInfoByParameter.Size = new System.Drawing.Size(343, 225);
-            this.listBoxInfoByParameter.TabIndex = 5;
-            // 
-            // listBoxAlarmInfoTwoDates
-            // 
-            this.listBoxAlarmInfoTwoDates.FormattingEnabled = true;
-            this.listBoxAlarmInfoTwoDates.Location = new System.Drawing.Point(7, 151);
-            this.listBoxAlarmInfoTwoDates.Name = "listBoxAlarmInfoTwoDates";
-            this.listBoxAlarmInfoTwoDates.Size = new System.Drawing.Size(388, 147);
-            this.listBoxAlarmInfoTwoDates.TabIndex = 3;
             // 
             // Form1
             // 
