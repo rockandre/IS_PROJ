@@ -21,6 +21,13 @@ namespace SmartH2O_SeeAPP
         public Form1()
         {
             InitializeComponent();
+            InitializeCharts();
+        }
+
+        private void InitializeCharts()
+        {
+            chartPH.Series.Add("PH");
+            chartPH.ChartAreas.Add("ChartAreaPH");
         }
 
         private void buttonGetDays_Click(object sender, EventArgs e)
@@ -48,11 +55,24 @@ namespace SmartH2O_SeeAPP
             requestPH.ContentType = "application/json";
             HttpWebResponse response = requestPH.GetResponse() as HttpWebResponse;
             string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
-            List<Hour> lista = JsonConvert.DeserializeObject<List<Hour>>(json);
-            /*XmlDocument doc = new XmlDocument();
-            doc.Load(response.GetResponseStream());*/
+            List<Hour> listaPH = JsonConvert.DeserializeObject<List<Hour>>(json);
 
-            MessageBox.Show(""+lista[24].hour+"-> "+lista[24].avg);
+            
+
+            for (int i = 0; i<24; i++)
+            {
+                chartPH.Series["PH"].Points.Add().SetValueXY(Convert.ToDateTime(listaPH[i].hour+":00"), Math.Round(listaPH[i].avg, 2));
+            }
+            chartPH.Series["PH"].XAxisType = System.Windows.Forms.DataVisualization.Charting.AxisType.Primary;
+            chartPH.Series["PH"].IsXValueIndexed = true;
+            chartPH.Series["PH"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
+            chartPH.ChartAreas["ChartAreaPH"].AxisY.Maximum = Math.Round(listaPH[25].avg + 1);
+            chartPH.ChartAreas["ChartAreaPH"].AxisY.Minimum = Math.Round(listaPH[24].avg - 1);
+            chartPH.ChartAreas["ChartAreaPH"].AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.FixedCount;
+            /*chartPH.ChartAreas["ChartAreaPH"].AxisX.Maximum = 25;*/
+            chartPH.ChartAreas["ChartAreaPH"].AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
+            chartPH.ChartAreas["ChartAreaPH"].AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
+            chartPH.ChartAreas["ChartAreaPH"].BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
         }
 
         private void buttonGetInfoByParameter_Click(object sender, EventArgs e)
