@@ -221,7 +221,7 @@ namespace SmartH2O_Service.Controllers
                 }
 
                 listAvgHourAndMaxMin[24] = min;
-                listAvgHourAndMaxMin[25] = min;
+                listAvgHourAndMaxMin[25] = max;
 
                 return Ok(listAvgHourAndMaxMin);
             }

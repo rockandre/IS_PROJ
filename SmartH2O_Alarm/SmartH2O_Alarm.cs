@@ -341,8 +341,12 @@ namespace SmartH2O_Alarm
             XmlElement date = alarmXml.CreateElement("date");
             date.InnerText = qualityParameter["date"].InnerText;
             XmlElement ruleFailed = alarmXml.CreateElement("rule");
-            ruleFailed.SetAttribute("rule_operator", rule.Attributes["operator"].InnerText);
-            ruleFailed.SetAttribute("rule_value", rule.Attributes["value"].InnerText);
+            XmlElement ruleOperator = alarmXml.CreateElement("operator");
+            ruleOperator.InnerText = rule.Attributes["operator"].InnerText;
+            XmlElement ruleValue = alarmXml.CreateElement("value");
+            ruleValue.InnerText = rule.Attributes["value"].InnerText;
+            ruleFailed.AppendChild(ruleOperator);
+            ruleFailed.AppendChild(ruleValue);
             qualParameter.AppendChild(name);
             qualParameter.AppendChild(value);
             qualParameter.AppendChild(date);
