@@ -17,7 +17,7 @@ namespace SmartH2O_Alarm
 {
     public partial class SmartH2O_Alarm : Form
     {
-        public static string TRIGGER_RULES = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"\trigger-rules.xml";
+        public static string TRIGGER_RULES = @"C:\SmartH2O_Data\SmartH2O_Alarm\trigger-rules.xml";
         private static MqttClient m_cClient = new MqttClient(IPAddress.Parse("127.0.0.1"));
         string[] m_strTopicsInfo = {"PH", "NH3", "CI2", "alarm" };
         string[] sensorsInfo;
@@ -31,13 +31,6 @@ namespace SmartH2O_Alarm
             {
                 MessageBox.Show("Error connecting to message broker...");
                 return;
-            }
-
-
-            if (m_cClient.IsConnected)
-            {
-                m_cClient.Unsubscribe(m_strTopicsInfo); //Put this in a button to see notif!
-                m_cClient.Disconnect(); //Free process and process's resources
             }
         }
 
@@ -69,21 +62,21 @@ namespace SmartH2O_Alarm
             XmlElement conditionsPH = trigger_rules.CreateElement("conditions");
             XmlElement conditionsCI2 = trigger_rules.CreateElement("conditions");
             XmlElement conditionsNH3 = trigger_rules.CreateElement("conditions");
-            conditionsPH.SetAttribute("ative", "");
-            conditionsCI2.SetAttribute("ative", "");
-            conditionsNH3.SetAttribute("ative", "");
+            conditionsPH.SetAttribute("ative", "true");
+            conditionsCI2.SetAttribute("ative", "true");
+            conditionsNH3.SetAttribute("ative", "true");
             XmlElement conditionPH = trigger_rules.CreateElement("condition");
             XmlElement conditionCI2 = trigger_rules.CreateElement("condition");
             XmlElement conditionNH3 = trigger_rules.CreateElement("condition");
-            conditionPH.SetAttribute("ative", "");
-            conditionCI2.SetAttribute("ative", "");
-            conditionNH3.SetAttribute("ative", "");
-            conditionPH.SetAttribute("operator", "");
-            conditionCI2.SetAttribute("operator", "");
-            conditionNH3.SetAttribute("operator", "");
-            conditionPH.SetAttribute("value", "");
-            conditionCI2.SetAttribute("value", "");
-            conditionNH3.SetAttribute("value", "");
+            conditionPH.SetAttribute("ative", "true");
+            conditionCI2.SetAttribute("ative", "true");
+            conditionNH3.SetAttribute("ative", "true");
+            conditionPH.SetAttribute("operator", "equal");
+            conditionCI2.SetAttribute("operator", "less_than");
+            conditionNH3.SetAttribute("operator", "between");
+            conditionPH.SetAttribute("value", "6");
+            conditionCI2.SetAttribute("value", "3.5");
+            conditionNH3.SetAttribute("value", "1.4;2.3");
             conditionsPH.AppendChild(conditionPH);
             conditionsCI2.AppendChild(conditionCI2);
             conditionsNH3.AppendChild(conditionNH3);
@@ -381,6 +374,12 @@ namespace SmartH2O_Alarm
         private void btnStop_Click(object sender, EventArgs e)
         {
             m_cClient.Unsubscribe(m_strTopicsInfo);
+
+            if (m_cClient.IsConnected)
+            {
+                m_cClient.Unsubscribe(m_strTopicsInfo); //Put this in a button to see notif!
+                m_cClient.Disconnect(); //Free process and process's resources
+            }
         }
     }
 }

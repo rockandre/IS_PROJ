@@ -17,7 +17,7 @@ namespace SmartH2O_DU
         static void Main(string[] args)
         {
             SensorNodeDll.SensorNodeDll sensorNodeDll = new SensorNodeDll.SensorNodeDll();
-            sensorNodeDll.Initialize(newValueIncoming, 7000);
+            sensorNodeDll.Initialize(newValueIncoming, 1000);
 
             //sensorNodeDll.Stop();
         }

@@ -28,25 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42723D, "1,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42724D, "0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42725D, "0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42726D, "0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42727D, "0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42728D, "0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(42729D, "0,0");
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBoxAlarmInfo = new System.Windows.Forms.ListBox();
             this.buttonGetAlarmInfo = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.listBoxAlarmsDateTwoDates = new System.Windows.Forms.ListBox();
             this.buttonSeeInfo2Dates = new System.Windows.Forms.Button();
-            this.listBoxDayTwo = new System.Windows.Forms.ListBox();
-            this.listBoxDayOne = new System.Windows.Forms.ListBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.listBoxInfoByParameter = new System.Windows.Forms.ListBox();
             this.buttonGetInfoByParameter = new System.Windows.Forms.Button();
@@ -59,21 +46,25 @@
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.chartPH = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartNH3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartCI2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBoxGraphs = new System.Windows.Forms.GroupBox();
             this.dateTimePickerDay = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerWeek = new System.Windows.Forms.DateTimePicker();
+            this.FinalDate = new System.Windows.Forms.Label();
+            this.StartDate = new System.Windows.Forms.Label();
+            this.dateTimePickerFinalDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartPH)).BeginInit();
             this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNH3)).BeginInit();
             this.groupBox14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCI2)).BeginInit();
             this.groupBoxGraphs.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,13 +95,16 @@
             this.buttonGetAlarmInfo.TabIndex = 0;
             this.buttonGetAlarmInfo.Text = "Get Alarm Information";
             this.buttonGetAlarmInfo.UseVisualStyleBackColor = true;
+            this.buttonGetAlarmInfo.Click += new System.EventHandler(this.buttonGetAlarmInfo_Click_1);
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.FinalDate);
+            this.groupBox5.Controls.Add(this.StartDate);
+            this.groupBox5.Controls.Add(this.dateTimePickerFinalDate);
+            this.groupBox5.Controls.Add(this.dateTimePickerStartDate);
             this.groupBox5.Controls.Add(this.listBoxAlarmsDateTwoDates);
             this.groupBox5.Controls.Add(this.buttonSeeInfo2Dates);
-            this.groupBox5.Controls.Add(this.listBoxDayTwo);
-            this.groupBox5.Controls.Add(this.listBoxDayOne);
             this.groupBox5.Location = new System.Drawing.Point(410, 13);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(401, 308);
@@ -121,35 +115,20 @@
             // listBoxAlarmsDateTwoDates
             // 
             this.listBoxAlarmsDateTwoDates.FormattingEnabled = true;
-            this.listBoxAlarmsDateTwoDates.Location = new System.Drawing.Point(7, 151);
+            this.listBoxAlarmsDateTwoDates.Location = new System.Drawing.Point(7, 73);
             this.listBoxAlarmsDateTwoDates.Name = "listBoxAlarmsDateTwoDates";
-            this.listBoxAlarmsDateTwoDates.Size = new System.Drawing.Size(388, 147);
+            this.listBoxAlarmsDateTwoDates.Size = new System.Drawing.Size(388, 225);
             this.listBoxAlarmsDateTwoDates.TabIndex = 3;
             // 
             // buttonSeeInfo2Dates
             // 
-            this.buttonSeeInfo2Dates.Location = new System.Drawing.Point(6, 121);
+            this.buttonSeeInfo2Dates.Location = new System.Drawing.Point(6, 44);
             this.buttonSeeInfo2Dates.Name = "buttonSeeInfo2Dates";
             this.buttonSeeInfo2Dates.Size = new System.Drawing.Size(389, 23);
             this.buttonSeeInfo2Dates.TabIndex = 2;
             this.buttonSeeInfo2Dates.Text = "See Alarms Information Beetween Two Dates";
             this.buttonSeeInfo2Dates.UseVisualStyleBackColor = true;
-            // 
-            // listBoxDayTwo
-            // 
-            this.listBoxDayTwo.FormattingEnabled = true;
-            this.listBoxDayTwo.Location = new System.Drawing.Point(202, 20);
-            this.listBoxDayTwo.Name = "listBoxDayTwo";
-            this.listBoxDayTwo.Size = new System.Drawing.Size(193, 95);
-            this.listBoxDayTwo.TabIndex = 1;
-            // 
-            // listBoxDayOne
-            // 
-            this.listBoxDayOne.FormattingEnabled = true;
-            this.listBoxDayOne.Location = new System.Drawing.Point(6, 20);
-            this.listBoxDayOne.Name = "listBoxDayOne";
-            this.listBoxDayOne.Size = new System.Drawing.Size(190, 95);
-            this.listBoxDayOne.TabIndex = 0;
+            this.buttonSeeInfo2Dates.Click += new System.EventHandler(this.buttonSeeInfo2Dates_Click_2);
             // 
             // groupBox6
             // 
@@ -181,6 +160,7 @@
             this.buttonGetInfoByParameter.TabIndex = 4;
             this.buttonGetInfoByParameter.Text = "Get Information By Parameter";
             this.buttonGetInfoByParameter.UseVisualStyleBackColor = true;
+            this.buttonGetInfoByParameter.Click += new System.EventHandler(this.buttonGetInfoByParameter_Click_2);
             // 
             // checkBoxCI2
             // 
@@ -259,7 +239,7 @@
             // 
             // groupBox13
             // 
-            this.groupBox13.Controls.Add(this.chart1);
+            this.groupBox13.Controls.Add(this.chartNH3);
             this.groupBox13.Location = new System.Drawing.Point(391, 20);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(382, 269);
@@ -267,83 +247,32 @@
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "NH3";
             // 
-            // chart1
+            // chartNH3
             // 
-            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
-            chartArea1.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
-            chartArea1.AxisX.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
-            chartArea1.AxisX.Title = "Days";
-            chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisY.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea1.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea1.AxisY.IsStartedFromZero = false;
-            chartArea1.AxisY.Maximum = 14D;
-            chartArea1.AxisY.Minimum = 0D;
-            chartArea1.AxisY.Title = "Value";
-            chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea1.Name = "ChartAreaNH3";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.Location = new System.Drawing.Point(6, 19);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartAreaNH3";
-            series1.EmptyPointStyle.Name = "No Info Available";
-            series1.IsXValueIndexed = true;
-            series1.Name = "NH3";
-            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            series1.YValuesPerPoint = 2;
-            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(368, 244);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chartNH3";
+            this.chartNH3.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chartNH3.Location = new System.Drawing.Point(6, 19);
+            this.chartNH3.Name = "chartNH3";
+            this.chartNH3.Size = new System.Drawing.Size(368, 244);
+            this.chartNH3.TabIndex = 2;
+            this.chartNH3.Text = "chartNH3";
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.chart2);
+            this.groupBox14.Controls.Add(this.chartCI2);
             this.groupBox14.Location = new System.Drawing.Point(772, 20);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(382, 269);
             this.groupBox14.TabIndex = 2;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "CL2";
+            this.groupBox14.Text = "CI2";
             // 
-            // chart2
+            // chartCI2
             // 
-            chartArea2.AxisX.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
-            chartArea2.AxisX.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Hours;
-            chartArea2.AxisX.ScaleBreakStyle.StartFromZero = System.Windows.Forms.DataVisualization.Charting.StartFromZero.Yes;
-            chartArea2.AxisX.Title = "Days";
-            chartArea2.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea2.AxisY.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea2.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea2.AxisY.IsStartedFromZero = false;
-            chartArea2.AxisY.Maximum = 14D;
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.AxisY.Title = "Value";
-            chartArea2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.Name = "ChartAreaNH3";
-            this.chart2.ChartAreas.Add(chartArea2);
-            this.chart2.Location = new System.Drawing.Point(7, 19);
-            this.chart2.Name = "chart2";
-            series2.ChartArea = "ChartAreaNH3";
-            series2.EmptyPointStyle.Name = "No Info Available";
-            series2.IsXValueIndexed = true;
-            series2.Name = "NH3";
-            series2.Points.Add(dataPoint1);
-            series2.Points.Add(dataPoint2);
-            series2.Points.Add(dataPoint3);
-            series2.Points.Add(dataPoint4);
-            series2.Points.Add(dataPoint5);
-            series2.Points.Add(dataPoint6);
-            series2.Points.Add(dataPoint7);
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Time;
-            series2.YValuesPerPoint = 2;
-            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            this.chart2.Series.Add(series2);
-            this.chart2.Size = new System.Drawing.Size(367, 244);
-            this.chart2.TabIndex = 3;
-            this.chart2.Text = "chartNH3";
+            this.chartCI2.Location = new System.Drawing.Point(7, 19);
+            this.chartCI2.Name = "chartCI2";
+            this.chartCI2.Size = new System.Drawing.Size(367, 244);
+            this.chartCI2.TabIndex = 3;
+            this.chartCI2.Text = "chartNH3";
             // 
             // groupBoxGraphs
             // 
@@ -376,6 +305,42 @@
             this.dateTimePickerWeek.TabIndex = 10;
             this.dateTimePickerWeek.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             // 
+            // FinalDate
+            // 
+            this.FinalDate.AutoSize = true;
+            this.FinalDate.Location = new System.Drawing.Point(220, 23);
+            this.FinalDate.Name = "FinalDate";
+            this.FinalDate.Size = new System.Drawing.Size(56, 13);
+            this.FinalDate.TabIndex = 17;
+            this.FinalDate.Text = "Final date:";
+            // 
+            // StartDate
+            // 
+            this.StartDate.AutoSize = true;
+            this.StartDate.Location = new System.Drawing.Point(21, 23);
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Size = new System.Drawing.Size(56, 13);
+            this.StartDate.TabIndex = 16;
+            this.StartDate.Text = "Start date:";
+            // 
+            // dateTimePickerFinalDate
+            // 
+            this.dateTimePickerFinalDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerFinalDate.Location = new System.Drawing.Point(282, 21);
+            this.dateTimePickerFinalDate.Name = "dateTimePickerFinalDate";
+            this.dateTimePickerFinalDate.Size = new System.Drawing.Size(93, 20);
+            this.dateTimePickerFinalDate.TabIndex = 15;
+            this.dateTimePickerFinalDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
+            // 
+            // dateTimePickerStartDate
+            // 
+            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerStartDate.Location = new System.Drawing.Point(83, 21);
+            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
+            this.dateTimePickerStartDate.Size = new System.Drawing.Size(93, 20);
+            this.dateTimePickerStartDate.TabIndex = 14;
+            this.dateTimePickerStartDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -396,14 +361,15 @@
             this.Name = "Form1";
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartPH)).EndInit();
             this.groupBox13.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNH3)).EndInit();
             this.groupBox14.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCI2)).EndInit();
             this.groupBoxGraphs.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -416,8 +382,6 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button buttonGetAlarmInfo;
         private System.Windows.Forms.Button buttonSeeInfo2Dates;
-        private System.Windows.Forms.ListBox listBoxDayTwo;
-        private System.Windows.Forms.ListBox listBoxDayOne;
         private System.Windows.Forms.CheckBox checkBoxCI2;
         private System.Windows.Forms.CheckBox checkBoxNh3;
         private System.Windows.Forms.CheckBox checkBoxpH;
@@ -430,12 +394,16 @@
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.GroupBox groupBoxGraphs;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPH;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartNH3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartCI2;
         private System.Windows.Forms.ListBox listBoxAlarmInfo;
         private System.Windows.Forms.ListBox listBoxAlarmsDateTwoDates;
         private System.Windows.Forms.ListBox listBoxInfoByParameter;
         private System.Windows.Forms.DateTimePicker dateTimePickerDay;
         private System.Windows.Forms.DateTimePicker dateTimePickerWeek;
+        private System.Windows.Forms.Label FinalDate;
+        private System.Windows.Forms.Label StartDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFinalDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStartDate;
     }
 }

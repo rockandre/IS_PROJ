@@ -13,7 +13,7 @@ namespace SmartH2O_Service.Controllers
 {
     public class AlarmsController : ApiController
     {
-        string FILEPATH = Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, @"App_Data\alarms-data.xml");
+        string FILEPATH = @"C:\SmartH2O_Data\SmartH2O_Log\alarms-data.xml";
 
         [Route("alarms/byDay/{year}/{month}/{day}")]
         public IHttpActionResult GetAlarmsByDay(int year, int month, int day)
@@ -88,7 +88,8 @@ namespace SmartH2O_Service.Controllers
             foreach (XmlNode item in alarmsPH)
             {
                 DateTime dateI = new DateTime(yearI, monthI, dayI);
-                DateTime dateF = new DateTime(yearF, monthF, dayF++);
+                DateTime dateF = new DateTime(yearF, monthF, dayF);
+                dateF = dateF.AddDays(1);
                 DateTime date = Convert.ToDateTime(item.SelectSingleNode("date").InnerText);
                 if (date > dateI && date < dateF)
                 {

@@ -22,8 +22,8 @@ namespace SmartH2O_DLog
             /*
             Console.WriteLine("Received = " + Encoding.UTF8.GetString(e.Message) + " on topic " + e.Topic);
             */
-            string filePathParams = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"param-data.xml";
-            string filePathAlarms = AppDomain.CurrentDomain.BaseDirectory.ToString() + @"alarms-data.xml";
+            string filePathParams = @"C:\SmartH2O_Data\SmartH2O_Log\param-data.xml";
+            string filePathAlarms = @"C:\SmartH2O_Data\SmartH2O_Log\alarms-data.xml";
             if (e.Topic == "PH" || e.Topic == "NH3" || e.Topic == "CI2")
             {
                 //ESCREVER NO FICHEIRO PARAM-DATA

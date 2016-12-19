@@ -15,8 +15,8 @@ namespace SmartH2O_Service.Controllers
     public class ParametersController : ApiController
     {
 
-        string FILEPATH = Path.Combine(HttpContext.Current.Request.PhysicalApplicationPath, @"App_Data\param-data.xml");
-        
+        string FILEPATH = @"C:\SmartH2O_Data\SmartH2O_Log\param-data.xml";
+
         [Route("parameters")]
         public List<Parameter> GetAllParameters()
         {
@@ -91,7 +91,7 @@ namespace SmartH2O_Service.Controllers
                 float[] sumValues = new float[24];
                 int[] counterHour = new int[24];
                 float min = 40;
-                float max = 1;
+                float max = 0;
                 
                 for (int i = 0; i < 24; i++)
                 {
@@ -126,7 +126,7 @@ namespace SmartH2O_Service.Controllers
                         {
                             max = float.Parse(value.Replace('.', ','));
                         }
-                    }
+                    } 
                 }
 
                 for (int j = 0; j < 24; j++)
@@ -138,6 +138,11 @@ namespace SmartH2O_Service.Controllers
                     {
                         listAvgHourAndMaxMin.Add(new Hour { hour = j, avg = 0 });
                     }
+                }
+
+                if ( min == 40)
+                {
+                    min = 0;
                 }
                 
                 listAvgHourAndMaxMin.Add(new Hour { hour = 24, avg = min });
@@ -152,6 +157,86 @@ namespace SmartH2O_Service.Controllers
             }
         }
 
+        [Route("parameters/{name}/{year}/{month}/{day}")]
+        public IHttpActionResult GetParametersDailyByWeek(string name, string year, string month, string day)
+        {
+            name = name.ToUpper();
+            if (name == "PH" || name == "CI2" || name == "NH3")
+            {
+                List<Day> listAvgHourAndMaxMin = new List<Day>();
+                float[] avgDay = new float[7];
+                float[] sumValues = new float[7];
+                int[] counterHour = new int[7];
+                float min = 40;
+                float max = 0;
+
+                DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
+                Calendar cal = dfi.Calendar;
+
+                for (int i = 0; i < 7; i++)
+                {
+                    sumValues[i] = 0;
+                    counterHour[i] = 0;
+                }
+                XmlDocument doc = new XmlDocument();
+                doc.Load(FILEPATH);
+
+                XmlNodeList parameters = doc.SelectNodes("quality-parameters/" + name);
+                foreach (XmlNode item in parameters)
+                {
+                    string value = item.SelectSingleNode("value").InnerText;
+                    DateTime date = Convert.ToDateTime(item.SelectSingleNode("date").InnerText);
+
+                    if (date.Year == int.Parse(year) && date.Month == int.Parse(month) && date.Day == int.Parse(day))
+                    {
+                        for (int k = 0; k < 7; k++)
+                        {
+                            if (date.Hour == k)
+                            {
+                                sumValues[k] += float.Parse(value.Replace('.', ','));
+                                counterHour[k]++;
+                            }
+                        }
+
+                        if (float.Parse(value.Replace('.', ',')) <= min)
+                        {
+                            min = float.Parse(value.Replace('.', ','));
+                        }
+                        if (float.Parse(value.Replace('.', ',')) >= max)
+                        {
+                            max = float.Parse(value.Replace('.', ','));
+                        }
+                    }
+                }
+
+                for (int j = 0; j < 7; j++)
+                {
+                    if (counterHour[j] != 0)
+                    {
+                        listAvgHourAndMaxMin.Add(new Day { day = j, avg = sumValues[j] / counterHour[j] });
+                    }
+                    else
+                    {
+                        listAvgHourAndMaxMin.Add(new Day { day = j, avg = 0 });
+                    }
+                }
+
+                if (min == 40)
+                {
+                    min = 0;
+                }
+
+                listAvgHourAndMaxMin.Add(new Day { day = 24, avg = min });
+                listAvgHourAndMaxMin.Add(new Day { day = 25, avg = max });
+
+
+                return Ok(listAvgHourAndMaxMin);
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
         [Route("parameters/{name}/{year1}/{month1}/{day1}/{year2}/{month2}/{day2}")]
         public IHttpActionResult GetParametersByDay(string name, int year1, int month1, int day1,
                                                                 int year2, int month2, int day2)
