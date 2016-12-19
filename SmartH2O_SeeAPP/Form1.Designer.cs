@@ -1,21 +1,4 @@
-﻿Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @rockandre
- Unwatch 2
-  Star 0
-  Fork 0 rockandre/IS_PROJ
- Code  Issues 0  Pull requests 0  Projects 0  Wiki Pulse  Graphs Settings
-Tree: a0a418b223 Find file Copy pathIS_PROJ/SmartH2O_SeeAPP/Form1.Designer.cs
-a0a418b  17 hours ago
-@rockandre rockandre Correction of bugs on log and alarm.
-2 contributors @fabiolage @rockandre
-RawBlameHistory
-488 lines(480 sloc)  27.7 KB
-namespace SmartH2O_SeeAPP
+﻿namespace SmartH2O_SeeAPP
 {
     partial class Form1
     {

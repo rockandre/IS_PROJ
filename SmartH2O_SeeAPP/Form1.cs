@@ -32,7 +32,7 @@ namespace SmartH2O_SeeAPP
         {
             
             groupBoxGraphs.Text = "Daily Statistics By Hour";
-
+            
         }
 
         private void buttonGetInfoByParameter_Click(object sender, EventArgs e)

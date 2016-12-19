@@ -80,7 +80,7 @@ namespace SmartH2O_Service.Controllers
         }
 
         [Route("parameters/{name}/{year}/{month}/{day}")]
-        public IHttpActionResult GetParametersByDaily(string name, string year, string month, string day)
+        public IHttpActionResult GetParametersHourlyByDay(string name, string year, string month, string day)
         {
             name = name.ToUpper();
             if (name == "PH" || name == "CI2" || name == "NH3")
@@ -221,7 +221,7 @@ namespace SmartH2O_Service.Controllers
                 }
 
                 listAvgHourAndMaxMin[24] = min;
-                listAvgHourAndMaxMin[25] = min;
+                listAvgHourAndMaxMin[25] = max;
 
                 return Ok(listAvgHourAndMaxMin);
             }
