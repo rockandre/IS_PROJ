@@ -361,6 +361,7 @@ namespace SmartH2O_Alarm
             ReadFromXml();
             //Specify events we are interest on
             //New Msg Arrived
+            labelAlarme.Text = "Alarme Ligado";
             m_cClient.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
             //This client's subscription operation id done
             //m_cClient.MqttMsgSubscribed += client_MqttMsgSubscribed;
@@ -373,6 +374,7 @@ namespace SmartH2O_Alarm
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            labelAlarme.Text = "Alarme Desligado";
             m_cClient.Unsubscribe(m_strTopicsInfo);
 
             if (m_cClient.IsConnected)

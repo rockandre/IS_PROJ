@@ -31,6 +31,7 @@
             this.btnStart = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.labelStartStop = new System.Windows.Forms.Label();
+            this.labelAlarme = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStart
@@ -65,11 +66,21 @@
             this.labelStartStop.TabIndex = 2;
             this.labelStartStop.Text = "Start/Stop Receiving Data From Sensor";
             // 
+            // labelAlarme
+            // 
+            this.labelAlarme.AutoSize = true;
+            this.labelAlarme.Location = new System.Drawing.Point(16, 82);
+            this.labelAlarme.Name = "labelAlarme";
+            this.labelAlarme.Size = new System.Drawing.Size(105, 15);
+            this.labelAlarme.TabIndex = 3;
+            this.labelAlarme.Text = "Alarme Desligado";
+            // 
             // SmartH2O_Alarm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(331, 301);
+            this.Controls.Add(this.labelAlarme);
             this.Controls.Add(this.labelStartStop);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnStart);
@@ -87,6 +98,7 @@
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label labelStartStop;
+        private System.Windows.Forms.Label labelAlarme;
     }
 }
 

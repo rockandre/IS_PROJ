@@ -32,6 +32,10 @@
             this.listBoxAlarmInfo = new System.Windows.Forms.ListBox();
             this.buttonGetAlarmInfo = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.FinalDate = new System.Windows.Forms.Label();
+            this.StartDate = new System.Windows.Forms.Label();
+            this.dateTimePickerFinalDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.listBoxAlarmsDateTwoDates = new System.Windows.Forms.ListBox();
             this.buttonSeeInfo2Dates = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -52,10 +56,6 @@
             this.groupBoxGraphs = new System.Windows.Forms.GroupBox();
             this.dateTimePickerDay = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerWeek = new System.Windows.Forms.DateTimePicker();
-            this.FinalDate = new System.Windows.Forms.Label();
-            this.StartDate = new System.Windows.Forms.Label();
-            this.dateTimePickerFinalDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerStartDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -111,6 +111,42 @@
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Alarm Information Beetween 2 Dates";
+            // 
+            // FinalDate
+            // 
+            this.FinalDate.AutoSize = true;
+            this.FinalDate.Location = new System.Drawing.Point(220, 23);
+            this.FinalDate.Name = "FinalDate";
+            this.FinalDate.Size = new System.Drawing.Size(56, 13);
+            this.FinalDate.TabIndex = 17;
+            this.FinalDate.Text = "Final date:";
+            // 
+            // StartDate
+            // 
+            this.StartDate.AutoSize = true;
+            this.StartDate.Location = new System.Drawing.Point(21, 23);
+            this.StartDate.Name = "StartDate";
+            this.StartDate.Size = new System.Drawing.Size(56, 13);
+            this.StartDate.TabIndex = 16;
+            this.StartDate.Text = "Start date:";
+            // 
+            // dateTimePickerFinalDate
+            // 
+            this.dateTimePickerFinalDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerFinalDate.Location = new System.Drawing.Point(282, 21);
+            this.dateTimePickerFinalDate.Name = "dateTimePickerFinalDate";
+            this.dateTimePickerFinalDate.Size = new System.Drawing.Size(93, 20);
+            this.dateTimePickerFinalDate.TabIndex = 15;
+            this.dateTimePickerFinalDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
+            // 
+            // dateTimePickerStartDate
+            // 
+            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerStartDate.Location = new System.Drawing.Point(83, 21);
+            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
+            this.dateTimePickerStartDate.Size = new System.Drawing.Size(93, 20);
+            this.dateTimePickerStartDate.TabIndex = 14;
+            this.dateTimePickerStartDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             // 
             // listBoxAlarmsDateTwoDates
             // 
@@ -304,42 +340,6 @@
             this.dateTimePickerWeek.Size = new System.Drawing.Size(105, 20);
             this.dateTimePickerWeek.TabIndex = 10;
             this.dateTimePickerWeek.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
-            // 
-            // FinalDate
-            // 
-            this.FinalDate.AutoSize = true;
-            this.FinalDate.Location = new System.Drawing.Point(220, 23);
-            this.FinalDate.Name = "FinalDate";
-            this.FinalDate.Size = new System.Drawing.Size(56, 13);
-            this.FinalDate.TabIndex = 17;
-            this.FinalDate.Text = "Final date:";
-            // 
-            // StartDate
-            // 
-            this.StartDate.AutoSize = true;
-            this.StartDate.Location = new System.Drawing.Point(21, 23);
-            this.StartDate.Name = "StartDate";
-            this.StartDate.Size = new System.Drawing.Size(56, 13);
-            this.StartDate.TabIndex = 16;
-            this.StartDate.Text = "Start date:";
-            // 
-            // dateTimePickerFinalDate
-            // 
-            this.dateTimePickerFinalDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFinalDate.Location = new System.Drawing.Point(282, 21);
-            this.dateTimePickerFinalDate.Name = "dateTimePickerFinalDate";
-            this.dateTimePickerFinalDate.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePickerFinalDate.TabIndex = 15;
-            this.dateTimePickerFinalDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
-            // 
-            // dateTimePickerStartDate
-            // 
-            this.dateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerStartDate.Location = new System.Drawing.Point(83, 21);
-            this.dateTimePickerStartDate.Name = "dateTimePickerStartDate";
-            this.dateTimePickerStartDate.Size = new System.Drawing.Size(93, 20);
-            this.dateTimePickerStartDate.TabIndex = 14;
-            this.dateTimePickerStartDate.Value = new System.DateTime(2016, 12, 19, 0, 0, 0, 0);
             // 
             // Form1
             // 

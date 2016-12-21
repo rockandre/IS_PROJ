@@ -90,93 +90,15 @@ namespace SmartH2O_Service.Controllers
                 float[] avgHour = new float[24];
                 float[] sumValues = new float[24];
                 int[] counterHour = new int[24];
-                float min = 40;
-                float max = 0;
-                
+                float[] min = new float[24];
+                float[] max = new float[24];
+
                 for (int i = 0; i < 24; i++)
                 {
                     sumValues[i] = 0;
                     counterHour[i] = 0;
-                }
-                XmlDocument doc = new XmlDocument();
-                doc.Load(FILEPATH);
-
-                XmlNodeList parameters = doc.SelectNodes("quality-parameters/" + name);
-                foreach (XmlNode item in parameters)
-                {
-                    string value = item.SelectSingleNode("value").InnerText;
-                    DateTime date = Convert.ToDateTime(item.SelectSingleNode("date").InnerText);
-                    
-                    if( date.Year == int.Parse(year) && date.Month == int.Parse(month) && date.Day == int.Parse(day))
-                    {
-                        for(int k = 0; k < 24 ; k++)
-                        {
-                            if(date.Hour == k)
-                            {
-                                sumValues[k] += float.Parse(value.Replace('.', ','));
-                                counterHour[k]++;
-                            }
-                        }
-
-                        if (float.Parse(value.Replace('.', ',')) <= min)
-                        {
-                            min = float.Parse(value.Replace('.', ','));
-                        }
-                        if (float.Parse(value.Replace('.', ',')) >= max)
-                        {
-                            max = float.Parse(value.Replace('.', ','));
-                        }
-                    } 
-                }
-
-                for (int j = 0; j < 24; j++)
-                {
-                    if (counterHour[j] != 0)
-                    {
-                        listAvgHourAndMaxMin.Add(new Hour { hour = j, avg = sumValues[j] / counterHour[j] });
-                    } else
-                    {
-                        listAvgHourAndMaxMin.Add(new Hour { hour = j, avg = 0 });
-                    }
-                }
-
-                if ( min == 40)
-                {
-                    min = 0;
-                }
-                
-                listAvgHourAndMaxMin.Add(new Hour { hour = 24, avg = min });
-                listAvgHourAndMaxMin.Add(new Hour { hour = 25, avg = max });
-                
-
-                return Ok(listAvgHourAndMaxMin);
-            }
-            else
-            {
-                return NotFound();
-            }
-        }
-
-        [Route("parameters/{name}/{year}/{month}/{day}")]
-        public IHttpActionResult GetParametersDailyByWeek(string name, string year, string month, string day)
-        {
-            name = name.ToUpper();
-            if (name == "PH" || name == "CI2" || name == "NH3")
-            {
-                List<Day> listAvgHourAndMaxMin = new List<Day>();
-                float[] avgDay = new float[7];
-                float[] sumValues = new float[7];
-                int[] counterHour = new int[7];
-                float min = 40;
-                float max = 0;
-
-                DateTimeFormatInfo dfi = DateTimeFormatInfo.CurrentInfo;
-                Calendar cal = dfi.Calendar;
-
-                for (int i = 0; i < 7; i++)
-                {
-                    sumValues[i] = 0;
-                    counterHour[i] = 0;
+                    min[i] = 20;
+                    max[i] = 0;
                 }
                 XmlDocument doc = new XmlDocument();
                 doc.Load(FILEPATH);
@@ -189,45 +111,43 @@ namespace SmartH2O_Service.Controllers
 
                     if (date.Year == int.Parse(year) && date.Month == int.Parse(month) && date.Day == int.Parse(day))
                     {
-                        for (int k = 0; k < 7; k++)
+                        for (int k = 0; k < 24; k++)
                         {
                             if (date.Hour == k)
                             {
                                 sumValues[k] += float.Parse(value.Replace('.', ','));
                                 counterHour[k]++;
-                            }
-                        }
 
-                        if (float.Parse(value.Replace('.', ',')) <= min)
-                        {
-                            min = float.Parse(value.Replace('.', ','));
-                        }
-                        if (float.Parse(value.Replace('.', ',')) >= max)
-                        {
-                            max = float.Parse(value.Replace('.', ','));
+                                if (float.Parse(value.Replace('.', ',')) <= min[k])
+                                {
+                                    min[k] = float.Parse(value.Replace('.', ','));
+                                }
+                                if (float.Parse(value.Replace('.', ',')) >= max[k])
+                                {
+                                    max[k] = float.Parse(value.Replace('.', ','));
+                                }
+                            }
                         }
                     }
                 }
 
-                for (int j = 0; j < 7; j++)
+
+                for (int j = 0; j < 24; j++)
                 {
+
+                    if (min[j] == 20)
+                    {
+                        min[j] = 0;
+                    }
                     if (counterHour[j] != 0)
                     {
-                        listAvgHourAndMaxMin.Add(new Day { day = j, avg = sumValues[j] / counterHour[j] });
+                        listAvgHourAndMaxMin.Add(new Hour { hour = j, min = min[j], avg = sumValues[j] / counterHour[j], max = max[j] });
                     }
                     else
                     {
-                        listAvgHourAndMaxMin.Add(new Day { day = j, avg = 0 });
+                        listAvgHourAndMaxMin.Add(new Hour { hour = j, min = min[j], avg = 0, max = max[j] });
                     }
                 }
-
-                if (min == 40)
-                {
-                    min = 0;
-                }
-
-                listAvgHourAndMaxMin.Add(new Day { day = 24, avg = min });
-                listAvgHourAndMaxMin.Add(new Day { day = 25, avg = max });
 
 
                 return Ok(listAvgHourAndMaxMin);
@@ -237,43 +157,62 @@ namespace SmartH2O_Service.Controllers
                 return NotFound();
             }
         }
+
         [Route("parameters/{name}/{year1}/{month1}/{day1}/{year2}/{month2}/{day2}")]
         public IHttpActionResult GetParametersByDay(string name, int year1, int month1, int day1,
                                                                 int year2, int month2, int day2)
         {
+
             name = name.ToUpper();
             if (name == "PH" || name == "CI2" || name == "NH3")
             {
-                List<Parameter> lista = new List<Parameter>();
-                List<DateTime> lista1 = new List<DateTime>();
+                List<WeeklyDay> lista = new List<WeeklyDay>();
+                List<float> array = new List<float>();
+
                 XmlDocument doc = new XmlDocument();
                 doc.Load(FILEPATH);
 
                 DateTime date1 = new DateTime(year1, month1, day1);
                 DateTime date2 = new DateTime(year2, month2, day2);
+                DateTime dateAux = date1.Date;
+                TimeSpan difference = date2 - date1;
+                double nDays = difference.TotalDays;
 
-                XmlNodeList parameters = doc.SelectNodes("quality-parameters/" + name);
-                foreach (XmlNode item in parameters)
+                for (int i = 0; i <= nDays; i++)
                 {
-                    int spacePosition=0;
-                    string value = item.SelectSingleNode("date").InnerText;
+                    array.Clear();
+                    XmlNodeList parameters = doc.SelectNodes("quality-parameters/" + name);
+                    foreach (XmlNode item in parameters)
+                    {
+                        DateTime date = Convert.ToDateTime(item.SelectSingleNode("date").InnerText.Split(' ')[0]).Date;
 
-                    spacePosition = value.ToString().IndexOf(" ");
-                    
-                    DateTime dt = DateTime.Parse(item.SelectSingleNode("date").InnerText, new CultureInfo("en-CA"));
-                    lista1.Add(dt);          
+                        if (dateAux.ToShortDateString().CompareTo(date.ToShortDateString()) == 0)
+                        {
+                            array.Add(float.Parse(item.SelectSingleNode("value").InnerText.Replace('.', ',')));
+                        }
 
+                    }
+                    if (array.Count != 0)
+                    {
+                        lista.Add(new WeeklyDay { day = dateAux.Day, min = array.Min(), avg = array.Average(), max = array.Max() });
+                    }
+                    else
+                    {
+                        lista.Add(new WeeklyDay { day = dateAux.Day, min = 0, avg = 0, max = 0 });
+                    }
+                    dateAux = dateAux.AddDays(1);
                 }
 
-                return Ok(lista1);
+                return Ok(lista);
             }
             else
             {
                 return NotFound();
             }
+
+
+
+
         }
-
-  
-
     }
 }

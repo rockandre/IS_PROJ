@@ -121,7 +121,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Alarm.cs" />
-    <Compile Include="Models\Day.cs" />
+    <Compile Include="Models\WeeklyDay.cs" />
     <Compile Include="Models\Hour.cs" />
     <Compile Include="Models\Parameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
